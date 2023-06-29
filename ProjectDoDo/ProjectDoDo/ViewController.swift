@@ -12,24 +12,34 @@ final class ViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         /// initialization of the tableView
-        let tableView = UITableView.init()
+        let tableView = UITableView()
         tableView.backgroundColor = .orange
+        tableView.delegate = self
+        tableView.dataSource = self
         return tableView
     }()
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupViews()
+        setupConstraints()
     }
     
-    // MARK: - Private Methods
+}
+
+// MARK: - Extensions
+
+
+// MARK: - UI
     
+extension ViewController {
     private func setupViews() {
         view.addSubview(tableView)
+        
     }
     
     private func setupConstraints() {
@@ -37,7 +47,25 @@ final class ViewController: UIViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
+}
 
+// MARK: - UITableViewDelegate
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        /// initialization of empty cell by hardcode
+        return UITableViewCell.init()
+    }
 
 }
+
+
 
