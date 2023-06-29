@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DD8B67A02A4DD313005251F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B679F2A4DD313005251F0 /* AppDelegate.swift */; };
 		DD8B67A22A4DD313005251F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B67A12A4DD313005251F0 /* SceneDelegate.swift */; };
-		DD8B67A42A4DD313005251F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B67A32A4DD313005251F0 /* ViewController.swift */; };
+		DD8B67A42A4DD313005251F0 /* MenuScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B67A32A4DD313005251F0 /* MenuScreenVC.swift */; };
 		DD8B67A72A4DD313005251F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8B67A52A4DD313005251F0 /* Main.storyboard */; };
 		DD8B67A92A4DD31B005251F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8B67A82A4DD31B005251F0 /* Assets.xcassets */; };
 		DD8B67AC2A4DD31B005251F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8B67AA2A4DD31B005251F0 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		DD8B679C2A4DD313005251F0 /* ProjectDoDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDoDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD8B679F2A4DD313005251F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD8B67A12A4DD313005251F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD8B67A32A4DD313005251F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD8B67A32A4DD313005251F0 /* MenuScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenVC.swift; sourceTree = "<group>"; };
 		DD8B67A62A4DD313005251F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD8B67A82A4DD31B005251F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD8B67AB2A4DD31B005251F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,15 +58,47 @@
 		DD8B679E2A4DD313005251F0 /* ProjectDoDo */ = {
 			isa = PBXGroup;
 			children = (
+				DDBE5F1F2A4DE61A006D8DC2 /* App */,
+				DDBE5F202A4DE629006D8DC2 /* Screens */,
+				DDBE5F222A4DE692006D8DC2 /* Resources */,
+			);
+			path = ProjectDoDo;
+			sourceTree = "<group>";
+		};
+		DDBE5F1F2A4DE61A006D8DC2 /* App */ = {
+			isa = PBXGroup;
+			children = (
 				DD8B679F2A4DD313005251F0 /* AppDelegate.swift */,
 				DD8B67A12A4DD313005251F0 /* SceneDelegate.swift */,
-				DD8B67A32A4DD313005251F0 /* ViewController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DDBE5F202A4DE629006D8DC2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DDBE5F212A4DE633006D8DC2 /* Menu */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		DDBE5F212A4DE633006D8DC2 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DD8B67A32A4DD313005251F0 /* MenuScreenVC.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		DDBE5F222A4DE692006D8DC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				DD8B67A52A4DD313005251F0 /* Main.storyboard */,
 				DD8B67A82A4DD31B005251F0 /* Assets.xcassets */,
 				DD8B67AA2A4DD31B005251F0 /* LaunchScreen.storyboard */,
 				DD8B67AD2A4DD31B005251F0 /* Info.plist */,
 			);
-			path = ProjectDoDo;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD8B67A42A4DD313005251F0 /* ViewController.swift in Sources */,
+				DD8B67A42A4DD313005251F0 /* MenuScreenVC.swift in Sources */,
 				DD8B67A02A4DD313005251F0 /* AppDelegate.swift in Sources */,
 				DD8B67A22A4DD313005251F0 /* SceneDelegate.swift in Sources */,
 			);
@@ -297,7 +329,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7YW3V66545;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ProjectDoDo/Info.plist;
+				INFOPLIST_FILE = ProjectDoDo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -329,7 +361,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7YW3V66545;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ProjectDoDo/Info.plist;
+				INFOPLIST_FILE = ProjectDoDo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

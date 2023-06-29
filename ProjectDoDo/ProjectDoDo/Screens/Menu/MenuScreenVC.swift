@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ViewController: UIViewController {
+final class MenuScreenVC: UIViewController {
     
     // MARK: - Private Properties
     
@@ -36,7 +36,7 @@ final class ViewController: UIViewController {
 
 // MARK: - UI
     
-extension ViewController {
+extension MenuScreenVC {
     private func setupViews() {
         view.addSubview(tableView)
         
@@ -51,7 +51,7 @@ extension ViewController {
 
 // MARK: - UITableViewDelegate
 
-extension ViewController: UITableViewDelegate {
+extension MenuScreenVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -59,7 +59,7 @@ extension ViewController: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 
-extension ViewController: UITableViewDataSource {
+extension MenuScreenVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /// initialization of empty cell by hardcode
         return UITableViewCell.init()
