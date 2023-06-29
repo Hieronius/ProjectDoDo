@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class ViewController: UIViewController {
     
@@ -28,11 +29,13 @@ final class ViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupViews() {
-        
+        view.addSubview(tableView)
     }
     
     private func setupConstraints() {
-        
+        tableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
 
 
