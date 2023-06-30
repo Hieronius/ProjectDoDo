@@ -10,6 +10,14 @@ import SnapKit
 
 final class DetailVC: UIViewController {
     
+    private var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView()
+        
+        collectionView.backgroundColor = .orange
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,10 +27,12 @@ final class DetailVC: UIViewController {
 
 extension DetailVC {
     private func setupViews() {
-        
+        view.addSubview(collectionView)
     }
     
     private func setupConstraints() {
-        
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
 }
