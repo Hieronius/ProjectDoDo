@@ -12,7 +12,13 @@ final class MenuScreenVC: UIViewController {
     
     // MARK: - Private Properties
     
-    private var products = ["Гавайская", "Маргарита", "Буженина", "4 Сыра", "Пепперони"]
+    private var productService = ProductService.init()
+    /// Will reload our table each time when we got a new data. Probably should be refactored with a "reloadSpecificRow" to save app performance.
+    var products: [Product] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     private lazy var tableView: UITableView = {
         /// initialization of the tableView
@@ -31,6 +37,14 @@ final class MenuScreenVC: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        
+        fetchProducts()
+    }
+    
+    // MARK: - Private Properties
+    
+    private func fetchProducts() {
+        products = productService.fetchProducts()
     }
     
 }
