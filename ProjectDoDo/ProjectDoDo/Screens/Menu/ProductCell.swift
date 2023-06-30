@@ -83,7 +83,7 @@ final class ProductCell: UITableViewCell {
         nameLabel.text = product.name
         detailLabel.text = product.detail
         priceButton.setTitle("\(product.price) р", for: .normal)
-        productImageView.image = UIImage(named: product.name)
+        productImageView.image = UIImage(named: product.image)
     }
 }
 
