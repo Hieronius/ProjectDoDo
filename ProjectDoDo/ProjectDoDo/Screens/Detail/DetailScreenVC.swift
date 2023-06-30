@@ -11,9 +11,21 @@ import SnapKit
 final class DetailVC: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
         
-        layout.itemSize = CGSize.init(width: 100, height: 100)
+        let itemsCount: CGFloat = 3
+        let padding: CGFloat = 20
+        let paddingCount: CGFloat = itemsCount + 1
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = padding
+        layout.minimumInteritemSpacing = padding
+        
+        let paddingSize = paddingCount * padding
+        let cellSize = (UIScreen.main.bounds.width - paddingSize) / itemsCount
+        
+        layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        layout.itemSize = CGSize.init(width: cellSize, height: cellSize)
         let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
         
         collectionView.backgroundColor = .orange
