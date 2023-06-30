@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Product {
+class ProductClass {
     
     var name: String
     
@@ -16,7 +16,7 @@ class Product {
     }
 }
 
-class Desert: Product {
+class Desert: ProductClass {
     
     override init(name: String) {
         super.init(name: name)
