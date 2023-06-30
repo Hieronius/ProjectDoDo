@@ -57,7 +57,7 @@ extension MenuScreenVC {
 
 extension MenuScreenVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return products.count
     }
 }
 
@@ -66,6 +66,8 @@ extension MenuScreenVC: UITableViewDelegate {
 extension MenuScreenVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.reuseId, for: indexPath) as! ProductCell
+        let product = products[indexPath.row]
+        cell.update(product)
         return cell
     }
 
