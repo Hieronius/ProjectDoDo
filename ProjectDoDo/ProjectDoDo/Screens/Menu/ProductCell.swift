@@ -35,6 +35,10 @@ final class ProductCell: UITableViewCell {
     
     // MARK: - Private Methods
     
+    private func update(_ product: String) {
+        nameLabel.text = product
+    }
+    
     private func setupViews() {
         contentView.addSubview(nameLabel)
     }

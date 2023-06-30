@@ -12,6 +12,8 @@ final class MenuScreenVC: UIViewController {
     
     // MARK: - Private Properties
     
+    private var products = ["Гавайская", "Маргарита", "Буженина", "4 Сыра", "Пепперони"]
+    
     private lazy var tableView: UITableView = {
         /// initialization of the tableView
         let tableView = UITableView()
