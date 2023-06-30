@@ -18,6 +18,8 @@ final class MenuScreenVC: UIViewController {
         tableView.backgroundColor = .orange
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.register(ProductCell.self, forCellReuseIdentifier: ProductCell.reuseId)
         return tableView
     }()
     
@@ -61,8 +63,8 @@ extension MenuScreenVC: UITableViewDelegate {
 
 extension MenuScreenVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /// initialization of empty cell by hardcode
-        return UITableViewCell.init()
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.reuseId, for: indexPath) as! ProductCell
+        return cell
     }
 
 }
