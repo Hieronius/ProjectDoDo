@@ -28,6 +28,8 @@ final class PhotoCollectionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupViews()
+        setupConstraints()
     }
     
     required init(coder: NSCoder) {

@@ -17,7 +17,7 @@ final class DetailVC: UIViewController {
         collectionView.backgroundColor = .orange
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.reuseId)
         
         return collectionView
     }()
@@ -48,7 +48,7 @@ extension DetailVC {
 
 extension DetailVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
 }
 
@@ -57,7 +57,7 @@ extension DetailVC: UICollectionViewDelegate {
 extension DetailVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionCell.reuseId, for: indexPath) as! PhotoCollectionCell
         cell.backgroundColor = .yellow
         return cell
     }
