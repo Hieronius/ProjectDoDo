@@ -52,7 +52,7 @@ final class MenuScreenVC: UIViewController {
 // MARK: - Extensions
 
 
-// MARK: - UI
+// MARK: - UI and constraints
     
 extension MenuScreenVC {
     private func setupViews() {

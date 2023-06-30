@@ -87,7 +87,7 @@ final class ProductCell: UITableViewCell {
     }
 }
 
-// MARK: - Extension. UI and constraints
+// MARK: - UI and constraints
 
 extension ProductCell {
     private func setupViews() {

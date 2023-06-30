@@ -10,20 +10,27 @@ import SnapKit
 
 final class DetailVC: UIViewController {
     
-    private var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView()
+        let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
         
         collectionView.backgroundColor = .orange
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        
         return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViews()
+        setupConstraints()
     }
 }
 
-// MARK: - Extension UI and Constraints
+// MARK: - UI and Constraints
 
 extension DetailVC {
     private func setupViews() {
@@ -34,5 +41,24 @@ extension DetailVC {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension DetailVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+}
+
+// MARK: - UICollectionDataSource
+
+extension DetailVC: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        cell.backgroundColor = .yellow
+        return UICollectionViewCell()
     }
 }
