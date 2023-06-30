@@ -9,6 +9,21 @@ import UIKit
 
 final class PhotoCollectionCell: UICollectionViewCell {
     
+    // MARK: - Public Properties
+    
+    static let reuseId = "PhotoCollectionCell"
+    
+    // MARK: - Private Properties
+    
+    var photoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = .blue
+        return imageView
+    }()
+    
     // MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -25,10 +40,12 @@ final class PhotoCollectionCell: UICollectionViewCell {
 
 extension PhotoCollectionCell {
     private func setupViews() {
-        
+        contentView.addSubview(photoImageView)
     }
     
     private func setupConstraints() {
-        
+        photoImageView.snp.makeConstraints { make in
+            make.edges.equalTo(contentView)
+        }
     }
 }
