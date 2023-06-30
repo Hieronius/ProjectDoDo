@@ -76,8 +76,20 @@ final class ProductCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Private Methods
+    // MARK: - Public Methods
     
+    /// Passing product to the cell.
+    func update(_ product: Product) {
+        nameLabel.text = product.name
+        detailLabel.text = product.detail
+        priceButton.setTitle("\(product.price) р", for: .normal)
+        productImageView.image = UIImage(named: product.name)
+    }
+}
+
+// MARK: - Extension. UI and constraints
+
+extension ProductCell {
     private func setupViews() {
         contentView.addSubview(productImageView)
         contentView.addSubview(verticalStackView)
@@ -95,12 +107,6 @@ final class ProductCell: UITableViewCell {
             make.top.right.bottom.equalTo(contentView).inset(10)
             make.left.equalTo(productImageView.snp.right).offset(10)
         }
-    }
-    
-    // MARK: - Public Methods
-    
-    func update(_ product: String) {
-        nameLabel.text = product
     }
 }
 
