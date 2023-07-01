@@ -52,7 +52,7 @@ final class ProductCell: UITableViewCell {
         return button
     }()
     
-    var productImageView: UIImageView = {
+    private var productImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.image = UIImage(named: "pepperoni")
         imageView.contentMode = .scaleAspectFill
