@@ -74,6 +74,7 @@ extension DetailVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionCell.reuseId, for: indexPath) as! PhotoCollectionCell
         cell.backgroundColor = .yellow
+        cell.layer.cornerRadius = 15
         return cell
     }
 }

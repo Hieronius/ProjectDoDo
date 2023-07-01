@@ -23,6 +23,8 @@ final class PhotoCollectionCell: UICollectionViewCell {
         imageView.backgroundColor = .white
         imageView.image = UIImage.init(named: "cucumber")
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 15
+        imageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         imageView.clipsToBounds = false
         
         return imageView
