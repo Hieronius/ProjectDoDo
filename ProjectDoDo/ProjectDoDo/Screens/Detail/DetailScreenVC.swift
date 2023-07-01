@@ -13,7 +13,7 @@ final class DetailVC: UIViewController {
     private lazy var collectionView: UICollectionView = {
         
         let itemsCount: CGFloat = 3
-        let padding: CGFloat = 20
+        let padding: CGFloat = 10
         let paddingCount: CGFloat = itemsCount + 1
         
         let layout = UICollectionViewFlowLayout()
@@ -25,12 +25,13 @@ final class DetailVC: UIViewController {
         let cellSize = (UIScreen.main.bounds.width - paddingSize) / itemsCount
         
         layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        layout.itemSize = CGSize.init(width: cellSize, height: cellSize)
-        let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
+        layout.itemSize = CGSize.init(width: cellSize, height: 1.7 * cellSize)
         
+        let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .orange
-        collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.delegate = self
+        
         collectionView.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.reuseId)
         
         return collectionView
@@ -62,7 +63,7 @@ extension DetailVC {
 
 extension DetailVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 9
     }
 }
 
