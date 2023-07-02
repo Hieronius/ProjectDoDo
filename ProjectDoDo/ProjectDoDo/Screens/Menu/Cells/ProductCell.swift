@@ -76,7 +76,7 @@ final class ProductCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Public Methods
+    // MARK: - Update Data
     
     /// Passing product to the cell.
     func update(_ product: Product) {
