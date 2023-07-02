@@ -14,6 +14,12 @@ final class DetailVC: UIViewController {
     
     private var collectionView: CollectionViewManager!
     
+    private var ingredients: [Ingredient] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -28,6 +34,7 @@ final class DetailVC: UIViewController {
         let layout = UICollectionViewLayout()
         collectionView = CollectionViewManager(frame: view.bounds, collectionViewLayout: layout)
         view.addSubview(collectionView)
+        
     }
 }
 

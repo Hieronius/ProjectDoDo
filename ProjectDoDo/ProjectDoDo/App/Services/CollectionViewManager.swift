@@ -12,6 +12,14 @@ final class CollectionViewManager: UICollectionView {
     
     // MARK: - Private Properties
     
+    private var ingredientService = IngredientService.init()
+    
+    private var ingredients: [Ingredient] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     private lazy var collectionView: UICollectionView = {
         
         let itemsCount: CGFloat = 3
@@ -45,12 +53,21 @@ final class CollectionViewManager: UICollectionView {
         super.init(frame: frame, collectionViewLayout: layout)
         setupViews()
         setupConstraints()
+        fetchIngredients()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+// MARK: - Fetching Data
+
+extension CollectionViewManager {
+    private func fetchIngredients() {
+        ingredients = ingredientService.fetchIngredients()
+    }
 }
 
 // MARK: - UI and Constraints
@@ -71,7 +88,7 @@ extension CollectionViewManager {
 
 extension CollectionViewManager: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return  ingredients.count
     }
 }
 
@@ -87,6 +104,7 @@ extension CollectionViewManager: UICollectionViewDataSource {
         cell.layer.shadowRadius = 15
         cell.layer.shadowOpacity = 1
         cell.layer.shadowOffset = CGSize(width: 0, height: 15)
+        cell.update(ingredients[indexPath.row])
         
         
         return cell

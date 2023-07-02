@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Already has a name of "Product" in my class "Product"
+// Already has a name of "Product" in my class "Product"
 struct Product {
     var name: String
     var detail: String

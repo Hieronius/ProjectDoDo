@@ -9,6 +9,6 @@ import Foundation
 
 struct Ingredient {
     var name: String
-    var price: String
+    var priceLabel: Int
     var image: String
 }

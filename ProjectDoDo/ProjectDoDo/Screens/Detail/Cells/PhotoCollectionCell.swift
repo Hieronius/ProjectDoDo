@@ -25,7 +25,7 @@ final class PhotoCollectionCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 15
         imageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        imageView.clipsToBounds = false
+        imageView.clipsToBounds = true
         
         return imageView
     }()
@@ -61,6 +61,16 @@ final class PhotoCollectionCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+// MARK: - Update Data
+
+extension PhotoCollectionCell {
+    func update(_ product: Ingredient) {
+        nameLabel.text = product.name
+        priceLabel.text = "\(product.priceLabel) р"
+        photoImageView.image = UIImage(named: product.image)
+    }
 }
 
 // MARK: - UI and constraints
