@@ -76,8 +76,10 @@ final class ProductCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Update Data
+}
     
+// MARK: - Update Data
+extension ProductCell {
     /// Passing product to the cell.
     func update(_ product: Product) {
         nameLabel.text = product.name
