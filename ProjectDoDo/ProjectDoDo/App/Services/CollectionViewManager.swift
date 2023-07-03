@@ -12,8 +12,6 @@ final class CollectionViewManager: UICollectionView {
     
     // MARK: - Private Properties
     
-    var ingredientService = IngredientService.init()
-    
     var ingredients: [Ingredient] = [] {
         didSet {
             self.reloadData()
@@ -37,14 +35,6 @@ final class CollectionViewManager: UICollectionView {
         register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.reuseId)
     }
     
-}
-
-// MARK: - Fetching Data
-
-extension CollectionViewManager {
-    func fetchIngredients() {
-        ingredients = ingredientService.fetchIngredients()
-    }
 }
 
 // MARK: - UICollectionViewDelegate
