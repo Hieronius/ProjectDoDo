@@ -12,7 +12,7 @@ final class DetailScreenVC: UIViewController {
     
     // MARK: - Private Properties
     
-     var ingredientService = IngredientService()
+     private let ingredientService = IngredientService()
     
     // MARK: - Lifecycle
     
@@ -30,7 +30,6 @@ final class DetailScreenVC: UIViewController {
     private func useIngredientService() {
         let view = view as! DetailView
         view.collectionView.ingredients = ingredientService.fetchIngredients()
-        view.collectionView.reloadData()
     }
 }
 
