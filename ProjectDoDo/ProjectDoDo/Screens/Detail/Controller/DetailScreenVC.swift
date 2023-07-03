@@ -29,10 +29,8 @@ final class DetailScreenVC: UIViewController {
 
     private func useIngredientService() {
         let view = view as! DetailView
-        view.ingredients = ingredientService.fetchIngredients()
         view.collectionView.ingredients = ingredientService.fetchIngredients()
         view.collectionView.reloadData()
-        print(view.ingredients.count)
     }
 }
 

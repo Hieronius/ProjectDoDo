@@ -13,12 +13,6 @@ final class DetailView: UIView {
     
     var collectionView: CollectionViewManager!
     
-    var ingredients: [Ingredient] = [] {
-        didSet{
-            collectionView.reloadData()
-        }
-    }
-    
     init() {
         super.init(frame: .zero)
         instantiateCollectionView()
@@ -28,14 +22,11 @@ final class DetailView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        
     }
     
     // MARK: - Private Methods
     
     private func instantiateCollectionView() {
-        
-        
         let itemsCount: CGFloat = 3
         let padding: CGFloat = 10
         let paddingCount: CGFloat = itemsCount + 1
@@ -55,16 +46,12 @@ final class DetailView: UIView {
         collectionView.backgroundColor = .orange
         
         self.addSubview(collectionView)
-        
-        print("Current subviews of DetailView are - \(self.subviews)")
-        print("Collection has been initialized")
     }
     
     private func setupConstraints() {
         self.collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
-        print("Constraints for Collection view has been initialized")
     }
     
 }
