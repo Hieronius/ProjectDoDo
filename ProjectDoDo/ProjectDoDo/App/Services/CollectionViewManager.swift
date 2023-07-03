@@ -10,7 +10,7 @@ import SnapKit
 
 final class CollectionViewManager: UICollectionView {
     
-    // MARK: - Private Properties
+    // MARK: - Public Properties
     
     var ingredients: [Ingredient] = [] {
         didSet {
@@ -18,7 +18,7 @@ final class CollectionViewManager: UICollectionView {
         }
     }
     
-    // MARK: Initialization
+    // MARK: - Initialization
     /// WIth this initializer we wan't define our DetailVC as "frame" for collectionView and layout as a private property of DetailVC
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -29,12 +29,16 @@ final class CollectionViewManager: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+// MARK: - CollectionViewSettings
+
+extension CollectionViewManager {
     private func setupCollectionView() {
         dataSource = self
         delegate = self
         register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.reuseId)
     }
-    
 }
 
 // MARK: - UICollectionViewDelegate
@@ -58,7 +62,6 @@ extension CollectionViewManager: UICollectionViewDataSource {
         cell.layer.shadowOpacity = 1
         cell.layer.shadowOffset = CGSize(width: 0, height: 15)
         cell.update(ingredients[indexPath.row])
-        
         
         return cell
     }

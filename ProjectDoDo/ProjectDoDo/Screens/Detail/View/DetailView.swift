@@ -9,9 +9,11 @@ import UIKit
 
 final class DetailView: UIView {
     
-    // MARK: - Private Properties
+    // MARK: - Public Properties
     
     var collectionView: CollectionViewManager!
+    
+    // MARK: - Initialisation
     
     init() {
         super.init(frame: .zero)

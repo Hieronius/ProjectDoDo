@@ -25,6 +25,7 @@ final class DetailScreenVC: UIViewController {
         useIngredientService()
         
     }
+    
     // MARK: - Private Methods
 
     private func useIngredientService() {
