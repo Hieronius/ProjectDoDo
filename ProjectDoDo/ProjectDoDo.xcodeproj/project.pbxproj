@@ -23,6 +23,7 @@
 		DD8C1C072A4E834C00BDEDB7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8C1C062A4E834C00BDEDB7 /* Product.swift */; };
 		DD8C1C0A2A4E85E200BDEDB7 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8C1C092A4E85E200BDEDB7 /* ProductService.swift */; };
 		DD8C1C0E2A4E99E700BDEDB7 /* DetailScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8C1C0D2A4E99E700BDEDB7 /* DetailScreenVC.swift */; };
+		DD8CAE112A5275960089D4B8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CAE102A5275960089D4B8 /* DetailView.swift */; };
 		DDEC9EBE2A4EAB8D006305E7 /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC9EBD2A4EAB8D006305E7 /* PhotoCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		DD8C1C062A4E834C00BDEDB7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		DD8C1C092A4E85E200BDEDB7 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		DD8C1C0D2A4E99E700BDEDB7 /* DetailScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenVC.swift; sourceTree = "<group>"; };
+		DD8CAE102A5275960089D4B8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DDEC9EBD2A4EAB8D006305E7 /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,11 +118,28 @@
 		DD8C1C0C2A4E99AE00BDEDB7 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				DD8CAE122A5275A80089D4B8 /* View */,
+				DD8CAE132A5275AE0089D4B8 /* Controller */,
 				DDEC9EBC2A4EAB67006305E7 /* Cells */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		DD8CAE122A5275A80089D4B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD8CAE102A5275960089D4B8 /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD8CAE132A5275AE0089D4B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				DD8C1C0D2A4E99E700BDEDB7 /* DetailScreenVC.swift */,
 				DD88F4482A51244A000E6CE9 /* DetailVCBackup.swift */,
 			);
-			path = Detail;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		DDBE5F1F2A4DE61A006D8DC2 /* App */ = {
@@ -261,6 +280,7 @@
 				DD8C1C0A2A4E85E200BDEDB7 /* ProductService.swift in Sources */,
 				DD88F4492A51244A000E6CE9 /* DetailVCBackup.swift in Sources */,
 				DD8C1C072A4E834C00BDEDB7 /* Product.swift in Sources */,
+				DD8CAE112A5275960089D4B8 /* DetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
