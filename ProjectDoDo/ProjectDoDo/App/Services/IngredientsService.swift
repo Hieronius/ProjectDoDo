@@ -19,6 +19,7 @@ final class IngredientService {
     ]
     
     func fetchIngredients() -> [Ingredient] {
+        print("Data has been passed")
         return ingredients
     }
 }

@@ -8,33 +8,31 @@
 import UIKit
 import SnapKit
 
-final class DetailVC: UIViewController {
+final class DetailScreenVC: UIViewController {
     
     // MARK: - Private Properties
     
-    private var collectionView: CollectionViewManager!
-    
-    private var ingredients: [Ingredient] = [] {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+     var ingredientService = IngredientService()
     
     // MARK: - Lifecycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        instantiateCollectionView()
+    override func loadView() {
+        view = DetailView()
     }
     
-    // MARK: - Private Methods
-    
-    private func instantiateCollectionView() {
-        let layout = UICollectionViewLayout()
-        collectionView = CollectionViewManager(frame: view.bounds, collectionViewLayout: layout)
-        view.addSubview(collectionView)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        useIngredientService()
         
+    }
+    // MARK: - Private Methods
+
+    private func useIngredientService() {
+        let view = view as! DetailView
+        view.ingredients = ingredientService.fetchIngredients()
+        view.collectionView.ingredients = ingredientService.fetchIngredients()
+        view.collectionView.reloadData()
+        print(view.ingredients.count)
     }
 }
 

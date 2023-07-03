@@ -12,52 +12,29 @@ final class CollectionViewManager: UICollectionView {
     
     // MARK: - Private Properties
     
-    private var ingredientService = IngredientService.init()
+    var ingredientService = IngredientService.init()
     
-    private var ingredients: [Ingredient] = [] {
+    var ingredients: [Ingredient] = [] {
         didSet {
-            collectionView.reloadData()
+            self.reloadData()
         }
     }
-    
-    private lazy var collectionView: UICollectionView = {
-        
-        let itemsCount: CGFloat = 3
-        let padding: CGFloat = 10
-        let paddingCount: CGFloat = itemsCount + 1
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = padding
-        layout.minimumInteritemSpacing = padding
-        
-        let paddingSize = paddingCount * padding
-        let cellSize = (UIScreen.main.bounds.width - paddingSize) / itemsCount
-        
-        layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        layout.itemSize = CGSize.init(width: cellSize, height: 1.7 * cellSize)
-        
-        let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .orange
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
-        collectionView.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.reuseId)
-        
-        return collectionView
-    }()
     
     // MARK: Initialization
     /// WIth this initializer we wan't define our DetailVC as "frame" for collectionView and layout as a private property of DetailVC
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
-        setupViews()
-        setupConstraints()
-        fetchIngredients()
+         setupCollectionView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupCollectionView() {
+        dataSource = self
+        delegate = self
+        register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.reuseId)
     }
     
 }
@@ -65,22 +42,8 @@ final class CollectionViewManager: UICollectionView {
 // MARK: - Fetching Data
 
 extension CollectionViewManager {
-    private func fetchIngredients() {
+    func fetchIngredients() {
         ingredients = ingredientService.fetchIngredients()
-    }
-}
-
-// MARK: - UI and Constraints
-
-extension CollectionViewManager {
-    private func setupViews() {
-        self.addSubview(collectionView)
-    }
-    
-    private func setupConstraints() {
-        collectionView.snp.makeConstraints { make in
-            make.edges.equalTo(self.safeAreaLayoutGuide)
-        }
     }
 }
 

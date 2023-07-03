@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD88F4492A51244A000E6CE9 /* DetailVCBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F4482A51244A000E6CE9 /* DetailVCBackup.swift */; };
 		DD88F44B2A5126D9000E6CE9 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F44A2A5126D9000E6CE9 /* Ingredient.swift */; };
 		DD88F44D2A51279B000E6CE9 /* IngredientsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */; };
 		DD8B4F452A500CDD00D29752 /* CollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B4F442A500CDD00D29752 /* CollectionViewManager.swift */; };
@@ -28,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD88F4482A51244A000E6CE9 /* DetailVCBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCBackup.swift; sourceTree = "<group>"; };
 		DD88F44A2A5126D9000E6CE9 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsService.swift; sourceTree = "<group>"; };
 		DD8B4F442A500CDD00D29752 /* CollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewManager.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				DD8C1C0D2A4E99E700BDEDB7 /* DetailScreenVC.swift */,
-				DD88F4482A51244A000E6CE9 /* DetailVCBackup.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,7 +275,6 @@
 				DD8C1C022A4E704D00BDEDB7 /* ProductCell.swift in Sources */,
 				DD8B67A22A4DD313005251F0 /* SceneDelegate.swift in Sources */,
 				DD8C1C0A2A4E85E200BDEDB7 /* ProductService.swift in Sources */,
-				DD88F4492A51244A000E6CE9 /* DetailVCBackup.swift in Sources */,
 				DD8C1C072A4E834C00BDEDB7 /* Product.swift in Sources */,
 				DD8CAE112A5275960089D4B8 /* DetailView.swift in Sources */,
 			);
