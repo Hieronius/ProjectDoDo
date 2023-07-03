@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class DetailScreenVC: UIViewController {
+final class DetailScreenVC: GenericViewController<DetailView> {
     
     // MARK: - Private Properties
     
@@ -16,21 +16,15 @@ final class DetailScreenVC: UIViewController {
     
     // MARK: - Lifecycle
     
-    override func loadView() {
-        view = DetailView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        useIngredientService()
-        
+        getIngredients()
     }
     
     // MARK: - Private Methods
 
-    private func useIngredientService() {
-        let view = view as! DetailView
-        view.collectionView.ingredients = ingredientService.fetchIngredients()
+    private func getIngredients() {
+        rootView.collectionView.ingredients = ingredientService.fetchIngredients()
     }
 }
 
