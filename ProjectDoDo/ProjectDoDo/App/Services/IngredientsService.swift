@@ -15,11 +15,16 @@ final class IngredientService {
         Ingredient(name: "Сладкий перец", priceLabel: 59, image: "pepper"),
         Ingredient(name: "Маринованные огурчики", priceLabel: 79, image: "cucumber"),
         Ingredient(name: "Свежие томаты", priceLabel: 59, image: "tomato"),
+        Ingredient(name: "Сладкий перец", priceLabel: 59, image: "pepper"),
+        Ingredient(name: "Маринованные огурчики", priceLabel: 79, image: "cucumber"),
+        Ingredient(name: "Свежие томаты", priceLabel: 59, image: "tomato"),
+        Ingredient(name: "Сладкий перец", priceLabel: 59, image: "pepper"),
+        Ingredient(name: "Маринованные огурчики", priceLabel: 79, image: "cucumber"),
+        Ingredient(name: "Свежие томаты", priceLabel: 59, image: "tomato"),
         Ingredient(name: "Сладкий перец", priceLabel: 59, image: "pepper")
     ]
     
     func fetchIngredients() -> [Ingredient] {
-        print("Data has been passed")
         return ingredients
     }
 }
