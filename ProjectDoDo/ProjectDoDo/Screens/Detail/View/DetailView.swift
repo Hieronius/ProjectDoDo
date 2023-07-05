@@ -23,7 +23,6 @@ final class DetailView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
     }
     
     // MARK: - Private Methods

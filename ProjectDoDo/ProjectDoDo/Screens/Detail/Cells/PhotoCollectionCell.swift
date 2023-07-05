@@ -18,6 +18,7 @@ final class PhotoCollectionCell: UICollectionViewCell {
     private var photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        // MARK: Error with this constraint. Ask Artur about it ❓
         // imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .white
@@ -80,14 +81,12 @@ extension PhotoCollectionCell {
         contentView.addSubview(photoImageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(priceLabel)
-        
     }
     
     private func setupConstraints() {
         photoImageView.snp.makeConstraints { make in
              make.top.equalTo(contentView)
              make.left.right.equalTo(contentView)
-            
         }
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(photoImageView.snp.bottom).offset(10)
