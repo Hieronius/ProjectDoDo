@@ -17,8 +17,8 @@ final class DetailView: UIView {
     
     init() {
         super.init(frame: .zero)
-        instantiateCollectionView()
-        setupConstraints()
+        setupCollectionView()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -27,7 +27,7 @@ final class DetailView: UIView {
     
     // MARK: - Private Methods
     
-    private func instantiateCollectionView() {
+    private func setupCollectionView() {
         let itemsCount: CGFloat = 3
         let padding: CGFloat = 10
         let paddingCount: CGFloat = itemsCount + 1
@@ -47,12 +47,10 @@ final class DetailView: UIView {
         collectionView.backgroundColor = .orange
         
         self.addSubview(collectionView)
-    }
-    
-    private func setupConstraints() {
+        
         self.collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
     }
-    
+   
 }
