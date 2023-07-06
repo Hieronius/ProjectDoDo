@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD8637F92A565C3900E83073 /* TableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8637F82A565C3900E83073 /* TableViewManager.swift */; };
+		DD8637F92A565C3900E83073 /* MenuTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8637F82A565C3900E83073 /* MenuTableViewManager.swift */; };
 		DD8637FC2A56663100E83073 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8637FB2A56663100E83073 /* MenuView.swift */; };
 		DD88F44B2A5126D9000E6CE9 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F44A2A5126D9000E6CE9 /* Ingredient.swift */; };
 		DD88F44D2A51279B000E6CE9 /* IngredientsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */; };
-		DD8B4F452A500CDD00D29752 /* CollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B4F442A500CDD00D29752 /* CollectionViewManager.swift */; };
+		DD8B4F452A500CDD00D29752 /* DetailCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B4F442A500CDD00D29752 /* DetailCollectionViewManager.swift */; };
 		DD8B67A02A4DD313005251F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B679F2A4DD313005251F0 /* AppDelegate.swift */; };
 		DD8B67A22A4DD313005251F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B67A12A4DD313005251F0 /* SceneDelegate.swift */; };
 		DD8B67A42A4DD313005251F0 /* MenuScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B67A32A4DD313005251F0 /* MenuScreenVC.swift */; };
@@ -29,11 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD8637F82A565C3900E83073 /* TableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewManager.swift; sourceTree = "<group>"; };
+		DD8637F82A565C3900E83073 /* MenuTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewManager.swift; sourceTree = "<group>"; };
 		DD8637FB2A56663100E83073 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DD88F44A2A5126D9000E6CE9 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsService.swift; sourceTree = "<group>"; };
-		DD8B4F442A500CDD00D29752 /* CollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewManager.swift; sourceTree = "<group>"; };
+		DD8B4F442A500CDD00D29752 /* DetailCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewManager.swift; sourceTree = "<group>"; };
 		DD8B679C2A4DD313005251F0 /* ProjectDoDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDoDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD8B679F2A4DD313005251F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD8B67A12A4DD313005251F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				DD8637FB2A56663100E83073 /* MenuView.swift */,
-				DD8637F82A565C3900E83073 /* TableViewManager.swift */,
+				DD8637F82A565C3900E83073 /* MenuTableViewManager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,8 +148,8 @@
 		DD8CAE122A5275A80089D4B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DD8B4F442A500CDD00D29752 /* CollectionViewManager.swift */,
 				DD8CAE102A5275960089D4B8 /* DetailView.swift */,
+				DD8B4F442A500CDD00D29752 /* DetailCollectionViewManager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,11 +292,11 @@
 				DD8CAE162A529D2A0089D4B8 /* GenericViewController.swift in Sources */,
 				DD8C1C042A4E788D00BDEDB7 /* ProductClass.swift in Sources */,
 				DDEC9EBE2A4EAB8D006305E7 /* PhotoCollectionCell.swift in Sources */,
-				DD8B4F452A500CDD00D29752 /* CollectionViewManager.swift in Sources */,
+				DD8B4F452A500CDD00D29752 /* DetailCollectionViewManager.swift in Sources */,
 				DD8C1C0E2A4E99E700BDEDB7 /* DetailScreenVC.swift in Sources */,
 				DD8637FC2A56663100E83073 /* MenuView.swift in Sources */,
 				DD8C1C022A4E704D00BDEDB7 /* ProductCell.swift in Sources */,
-				DD8637F92A565C3900E83073 /* TableViewManager.swift in Sources */,
+				DD8637F92A565C3900E83073 /* MenuTableViewManager.swift in Sources */,
 				DD8B67A22A4DD313005251F0 /* SceneDelegate.swift in Sources */,
 				DD8C1C0A2A4E85E200BDEDB7 /* ProductService.swift in Sources */,
 				DD8C1C072A4E834C00BDEDB7 /* Product.swift in Sources */,
