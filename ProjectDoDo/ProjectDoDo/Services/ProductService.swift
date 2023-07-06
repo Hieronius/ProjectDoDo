@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class ProductService {
+protocol ProductServiceProtocol {
+    func fetchProducts() -> [Product]
+}
+
+final class ProductService: ProductServiceProtocol {
     
     let products: [Product] = [
     Product(name: "Гавайская", detail: "Тесто, Сыр, Буженина", price: 590, image: "hawaii"),
