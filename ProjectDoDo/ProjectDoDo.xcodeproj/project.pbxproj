@@ -67,8 +67,16 @@
 			isa = PBXGroup;
 			children = (
 				DD8637FB2A56663100E83073 /* MenuView.swift */,
+				DD8637F82A565C3900E83073 /* TableViewManager.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DD8637FD2A56ACF000E83073 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DD8B67932A4DD313005251F0 = {
@@ -92,6 +100,9 @@
 			children = (
 				DDBE5F1F2A4DE61A006D8DC2 /* App */,
 				DDBE5F202A4DE629006D8DC2 /* Screens */,
+				DD8C1C082A4E856F00BDEDB7 /* Services */,
+				DD8C1C052A4E833C00BDEDB7 /* Models */,
+				DD8637FD2A56ACF000E83073 /* Extensions */,
 				DDBE5F222A4DE692006D8DC2 /* Resources */,
 			);
 			path = ProjectDoDo;
@@ -110,8 +121,6 @@
 		DD8C1C082A4E856F00BDEDB7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DD8637F82A565C3900E83073 /* TableViewManager.swift */,
-				DD8B4F442A500CDD00D29752 /* CollectionViewManager.swift */,
 				DD8C1C092A4E85E200BDEDB7 /* ProductService.swift */,
 				DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */,
 			);
@@ -129,8 +138,8 @@
 		DD8C1C0C2A4E99AE00BDEDB7 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				DD8C1C0D2A4E99E700BDEDB7 /* DetailScreenVC.swift */,
 				DD8CAE122A5275A80089D4B8 /* View */,
-				DD8CAE132A5275AE0089D4B8 /* Controller */,
 				DDEC9EBC2A4EAB67006305E7 /* Cells */,
 			);
 			path = Detail;
@@ -139,35 +148,25 @@
 		DD8CAE122A5275A80089D4B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD8B4F442A500CDD00D29752 /* CollectionViewManager.swift */,
 				DD8CAE102A5275960089D4B8 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		DD8CAE132A5275AE0089D4B8 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				DD8C1C0D2A4E99E700BDEDB7 /* DetailScreenVC.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		DD8CAE142A529D0F0089D4B8 /* Custom */ = {
+		DD8CAE142A529D0F0089D4B8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				DD8CAE152A529D2A0089D4B8 /* GenericViewController.swift */,
 			);
-			path = Custom;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		DDBE5F1F2A4DE61A006D8DC2 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				DD8CAE142A529D0F0089D4B8 /* Custom */,
 				DD8B679F2A4DD313005251F0 /* AppDelegate.swift */,
 				DD8B67A12A4DD313005251F0 /* SceneDelegate.swift */,
-				DD8C1C082A4E856F00BDEDB7 /* Services */,
-				DD8C1C052A4E833C00BDEDB7 /* Models */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -175,8 +174,8 @@
 		DDBE5F202A4DE629006D8DC2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DD8C1C0C2A4E99AE00BDEDB7 /* Detail */,
 				DDBE5F212A4DE633006D8DC2 /* Menu */,
+				DD8C1C0C2A4E99AE00BDEDB7 /* Detail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -184,8 +183,8 @@
 		DDBE5F212A4DE633006D8DC2 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				DD8637FA2A56660F00E83073 /* View */,
 				DD8B67A32A4DD313005251F0 /* MenuScreenVC.swift */,
+				DD8637FA2A56660F00E83073 /* View */,
 				DD8C1C0B2A4E98BE00BDEDB7 /* Cells */,
 			);
 			path = Menu;
@@ -194,6 +193,7 @@
 		DDBE5F222A4DE692006D8DC2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DD8CAE142A529D0F0089D4B8 /* Helpers */,
 				DD8B67A82A4DD31B005251F0 /* Assets.xcassets */,
 				DD8B67AA2A4DD31B005251F0 /* LaunchScreen.storyboard */,
 				DD8B67AD2A4DD31B005251F0 /* Info.plist */,
