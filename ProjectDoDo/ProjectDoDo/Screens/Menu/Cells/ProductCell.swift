@@ -78,7 +78,8 @@ final class ProductCell: UITableViewCell {
     
 }
     
-// MARK: - Update Data
+// MARK: - Public methods
+
 extension ProductCell {
     /// Passing product to the cell.
     func update(_ product: Product) {

@@ -18,8 +18,6 @@ final class PhotoCollectionCell: UICollectionViewCell {
     private var photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        // MARK: Error with this constraint. Ask Artur about it ❓
-        // imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .white
         imageView.image = UIImage.init(named: "cucumber")
