@@ -12,7 +12,7 @@ final class DetailScreenVC: GenericViewController<DetailView> {
     
     // MARK: - Private Properties
     
-     private let ingredientService = IngredientService()
+    private let ingredientService = IngredientService()
     
     // MARK: - Lifecycle
     

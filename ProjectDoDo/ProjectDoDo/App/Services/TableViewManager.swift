@@ -18,10 +18,11 @@ final class TableViewManager: UITableView {
         }
     }
     
+    // MARK: - Initialization
+    
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         setupTableViewManager()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -46,7 +47,6 @@ extension TableViewManager: UITableViewDelegate {
         return products.count
     }
 }
-
 
 // MARK: - TableViewManagerDataSource
 
