@@ -33,6 +33,28 @@ final class TableViewManager: UITableView {
 
 extension TableViewManager {
     private func setupTableViewManager() {
-        
+        dataSource = self
+        delegate = self
+        register(ProductCell.self, forCellReuseIdentifier: ProductCell.reuseId)
+    }
+}
+
+// MARK: - TableViewManagerDelegate
+
+extension TableViewManager: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return products.count
+    }
+}
+
+
+// MARK: - TableViewManagerDataSource
+
+extension TableViewManager: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.reuseId, for: indexPath) as! ProductCell
+        let product = products[indexPath.row]
+        cell.update(product)
+        return cell
     }
 }
