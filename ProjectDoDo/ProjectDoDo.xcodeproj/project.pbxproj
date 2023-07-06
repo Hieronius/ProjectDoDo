@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD8637F92A565C3900E83073 /* TableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8637F82A565C3900E83073 /* TableViewManager.swift */; };
 		DD88F44B2A5126D9000E6CE9 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F44A2A5126D9000E6CE9 /* Ingredient.swift */; };
 		DD88F44D2A51279B000E6CE9 /* IngredientsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */; };
 		DD8B4F452A500CDD00D29752 /* CollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8B4F442A500CDD00D29752 /* CollectionViewManager.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD8637F82A565C3900E83073 /* TableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewManager.swift; sourceTree = "<group>"; };
 		DD88F44A2A5126D9000E6CE9 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsService.swift; sourceTree = "<group>"; };
 		DD8B4F442A500CDD00D29752 /* CollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewManager.swift; sourceTree = "<group>"; };
@@ -100,8 +102,9 @@
 		DD8C1C082A4E856F00BDEDB7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DD8C1C092A4E85E200BDEDB7 /* ProductService.swift */,
+				DD8637F82A565C3900E83073 /* TableViewManager.swift */,
 				DD8B4F442A500CDD00D29752 /* CollectionViewManager.swift */,
+				DD8C1C092A4E85E200BDEDB7 /* ProductService.swift */,
 				DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */,
 			);
 			path = Services;
@@ -285,6 +288,7 @@
 				DD8B4F452A500CDD00D29752 /* CollectionViewManager.swift in Sources */,
 				DD8C1C0E2A4E99E700BDEDB7 /* DetailScreenVC.swift in Sources */,
 				DD8C1C022A4E704D00BDEDB7 /* ProductCell.swift in Sources */,
+				DD8637F92A565C3900E83073 /* TableViewManager.swift in Sources */,
 				DD8B67A22A4DD313005251F0 /* SceneDelegate.swift in Sources */,
 				DD8C1C0A2A4E85E200BDEDB7 /* ProductService.swift in Sources */,
 				DD8C1C072A4E834C00BDEDB7 /* Product.swift in Sources */,
