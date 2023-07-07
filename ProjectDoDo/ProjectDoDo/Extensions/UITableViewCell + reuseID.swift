@@ -11,7 +11,6 @@ protocol Reusable {}
 
 extension UITableViewCell: Reusable {}
 
-/// Define a data type that conforms to the protocol in our case.
 extension Reusable where Self: UITableViewCell {
     
     static var reuseID: String {

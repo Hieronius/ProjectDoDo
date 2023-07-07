@@ -9,7 +9,6 @@ import UIKit
 
 extension UICollectionViewCell: Reusable {}
 
-/// Define a data type that conforms to the protocol in our case.
 extension Reusable where Self: UICollectionViewCell {
     
     static var reuseID: String {
