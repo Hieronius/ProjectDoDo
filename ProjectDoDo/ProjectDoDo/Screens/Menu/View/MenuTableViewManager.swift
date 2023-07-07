@@ -36,7 +36,7 @@ extension TableViewManager {
     private func setupTableViewManager() {
         dataSource = self
         delegate = self
-        register(ProductCell.self, forCellReuseIdentifier: ProductCell.reuseId)
+        registerCell(ProductCell.self)
     }
 }
 
@@ -52,7 +52,7 @@ extension TableViewManager: UITableViewDelegate {
 
 extension TableViewManager: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.reuseId, for: indexPath) as! ProductCell
+        let cell = dequeueCell(indexPath) as ProductCell
         let product = products[indexPath.row]
         cell.update(product)
         return cell

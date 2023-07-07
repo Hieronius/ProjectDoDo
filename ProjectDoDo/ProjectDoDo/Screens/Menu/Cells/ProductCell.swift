@@ -11,7 +11,7 @@ final class ProductCell: UITableViewCell {
     
     // MARK: - Public Properties
     
-    static let reuseId = "ProductCell"
+    static let reuseID = "ProductCell"
     
     // MARK: - Private Properties
     
