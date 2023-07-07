@@ -36,6 +36,7 @@ extension TableViewManager {
     private func setupTableViewManager() {
         dataSource = self
         delegate = self
+        self.separatorStyle = .none
         registerCell(ProductCell.self)
     }
 }
