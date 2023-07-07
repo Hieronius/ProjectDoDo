@@ -11,7 +11,7 @@ final class PhotoCollectionCell: UICollectionViewCell {
     
     // MARK: - Public Properties
     
-    static let reuseId = "PhotoCollectionCell"
+    static let reuseID = "PhotoCollectionCell"
     
     // MARK: - Private Properties
     

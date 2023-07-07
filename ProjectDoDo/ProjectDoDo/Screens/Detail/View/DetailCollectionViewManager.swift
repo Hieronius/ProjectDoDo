@@ -37,7 +37,7 @@ extension CollectionViewManager {
     private func setupCollectionView() {
         dataSource = self
         delegate = self
-        register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.reuseId)
+        registerCell(PhotoCollectionCell.self)
     }
 }
 
@@ -45,7 +45,7 @@ extension CollectionViewManager {
 
 extension CollectionViewManager: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  ingredients.count
+        return ingredients.count
     }
 }
 
@@ -54,7 +54,7 @@ extension CollectionViewManager: UICollectionViewDelegate {
 extension CollectionViewManager: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionCell.reuseId, for: indexPath) as! PhotoCollectionCell
+        let cell = dequeueCell(indexPath) as PhotoCollectionCell
         cell.backgroundColor = .yellow
         cell.layer.cornerRadius = 15
         cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
