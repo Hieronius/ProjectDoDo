@@ -18,6 +18,7 @@ final class DetailScreenVC: GenericViewController<DetailView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getIngredients()
     }
     

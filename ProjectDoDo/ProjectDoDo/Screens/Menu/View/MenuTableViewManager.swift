@@ -30,7 +30,7 @@ final class TableViewManager: UITableView {
     }
 }
 
-// MARK: - Private methods
+// MARK: - Private Methods
 
 extension TableViewManager {
     private func setupTableViewManager() {

@@ -25,6 +25,8 @@ final class MenuView: UIView {
         super.init(coder: coder)
     }
     
+    // MARK: - Private Methods
+    
     private func instantiateTableView() {
         tableView = TableViewManager(frame: self.bounds, style: .plain)
         self.addSubview(tableView)

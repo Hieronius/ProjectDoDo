@@ -18,10 +18,11 @@ final class MenuScreenVC: GenericViewController<MenuView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getProducts()
     }
     
-    // MARK: - Private Properties
+    // MARK: - Private Methods
     
     private func getProducts() {
         rootView.tableView.products = productService.fetchProducts()
