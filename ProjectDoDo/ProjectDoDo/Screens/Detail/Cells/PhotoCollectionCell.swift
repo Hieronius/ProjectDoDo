@@ -15,45 +15,17 @@ final class PhotoCollectionCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     
-    private var photoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .white
-        imageView.image = UIImage.init(named: "cucumber")
-        imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 15
-        imageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        imageView.clipsToBounds = true
-        
-        return imageView
-    }()
-    
-    private var nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Маринованные огурчики"
-        label.font = UIFont.boldSystemFont(ofSize: 15)
-        label.numberOfLines = 2
-        label.textAlignment = .center
-        
-        return label
-    }()
-    
-    private var priceLabel: UILabel = {
-        let label = UILabel()
-        label.text = "79р"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textAlignment = .center
-        
-        return label
-    }()
+    private var photoImageView = UIImageView()
+    private var nameLabel = UILabel()
+    private var priceLabel = UILabel()
     
     // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
-        setupConstraints()
+        setupPhotoImageView()
+        setupNameLabel()
+        setupPriceLabel()
     }
     
     required init(coder: NSCoder) {
@@ -62,7 +34,7 @@ final class PhotoCollectionCell: UICollectionViewCell {
     
 }
 
-// MARK: - Update Data
+// MARK: - Public Methods
 
 extension PhotoCollectionCell {
     func update(_ product: Ingredient) {
@@ -75,24 +47,49 @@ extension PhotoCollectionCell {
 // MARK: - UI and constraints
 
 extension PhotoCollectionCell {
-    private func setupViews() {
+    private func setupPhotoImageView() {
+        photoImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        photoImageView.backgroundColor = .white
+        photoImageView.image = UIImage.init(named: "cucumber")
+        photoImageView.contentMode = .scaleAspectFit
+        photoImageView.layer.cornerRadius = 15
+        photoImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        photoImageView.clipsToBounds = true
+        
         contentView.addSubview(photoImageView)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(priceLabel)
+        
+        photoImageView.snp.makeConstraints { make in
+            make.top.equalTo(contentView)
+            make.left.right.equalTo(contentView)
+        }
     }
     
-    private func setupConstraints() {
-        photoImageView.snp.makeConstraints { make in
-             make.top.equalTo(contentView)
-             make.left.right.equalTo(contentView)
-        }
+    private func setupNameLabel() {
+        nameLabel.text = "Маринованные огурчики"
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        nameLabel.numberOfLines = 2
+        nameLabel.textAlignment = .center
+        
+        contentView.addSubview(nameLabel)
+        
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(photoImageView.snp.bottom).offset(10)
             make.left.right.equalTo(contentView)
         }
+    }
+    
+    private func setupPriceLabel() {
+        priceLabel.text = "79р"
+        priceLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        priceLabel.textAlignment = .center
+        
+        contentView.addSubview(priceLabel)
+        
         priceLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(10)
             make.left.right.equalTo(contentView)
         }
+        
     }
 }
