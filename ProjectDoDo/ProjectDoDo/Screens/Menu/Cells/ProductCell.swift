@@ -15,61 +15,21 @@ final class ProductCell: UITableViewCell {
     
     // MARK: - Private Properties
     
-    private var verticalStackView: UIStackView = {
-        var stackView = UIStackView.init()
-        stackView.axis = .vertical
-        stackView.spacing = 15
-        stackView.alignment = .leading
-        
-        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 15, bottom: 12, trailing: 0)
-        stackView.isLayoutMarginsRelativeArrangement = true
-        return stackView
-    }()
-    
-    private var nameLabel: UILabel = {
-        var label = UILabel()
-        label.text = "Пепперони"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        return label
-    }()
-    
-    private var detailLabel: UILabel = {
-        var label = UILabel()
-        label.text = "Тесто, Цыпленок, моцарелла, томатный соус"
-        label.textColor = .darkGray
-        label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 15)
-        return label
-    }()
-    
-    private var priceButton: UIButton = {
-        var button = UIButton()
-        button.setTitle("От 469 руб", for: .normal)
-        button.backgroundColor = .orange.withAlphaComponent(0.1)
-        button.layer.cornerRadius = 20
-        button.setTitleColor(.brown, for: .normal)
-        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        return button
-    }()
-    
-    private var productImageView: UIImageView = {
-        var imageView = UIImageView()
-        imageView.image = UIImage(named: "pepperoni")
-        imageView.contentMode = .scaleAspectFill
-        let width = UIScreen.main.bounds.width
-        imageView.heightAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
-        return imageView
-        
-    }()
+    private var verticalStackView = UIStackView()
+    private var nameLabel = UILabel()
+    private var detailLabel = UILabel()
+    private var priceButton = UIButton()
+    private var productImageView = UIImageView()
     
     // MARK: - Initialization
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setupViews()
-        setupConstraints()
+        setupProductImageView()
+        setupVerticalStackView()
+        setupNameLabel()
+        setupDetailLabel()
+        setupPriceButton()
     }
     
     required init?(coder: NSCoder) {
@@ -77,11 +37,10 @@ final class ProductCell: UITableViewCell {
     }
     
 }
-    
+
 // MARK: - Public methods
 
 extension ProductCell {
-    /// Passing product to the cell.
     func update(_ product: Product) {
         nameLabel.text = product.name
         detailLabel.text = product.detail
@@ -93,23 +52,62 @@ extension ProductCell {
 // MARK: - UI and constraints
 
 extension ProductCell {
-    private func setupViews() {
-        contentView.addSubview(productImageView)
+    private func setupVerticalStackView() {
+        verticalStackView.axis = .vertical
+        verticalStackView.spacing = 15
+        verticalStackView.alignment = .leading
+        
+        verticalStackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 15, bottom: 12, trailing: 0)
+        verticalStackView.isLayoutMarginsRelativeArrangement = true
+        
         contentView.addSubview(verticalStackView)
-        verticalStackView.addArrangedSubview(nameLabel)
-        verticalStackView.addArrangedSubview(detailLabel)
-        verticalStackView.addArrangedSubview(priceButton)
-    }
-    
-    private func setupConstraints() {
-        productImageView.snp.makeConstraints { make in
-            make.left.equalTo(contentView).offset(10)
-            make.centerY.equalTo(contentView)
-        }
+        
         verticalStackView.snp.makeConstraints { make in
             make.top.right.bottom.equalTo(contentView).inset(10)
             make.left.equalTo(productImageView.snp.right).offset(10)
         }
     }
+    
+    private func setupNameLabel() {
+        nameLabel.text = "Пепперони"
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        verticalStackView.addArrangedSubview(nameLabel)
+    }
+    
+    private func setupDetailLabel() {
+        detailLabel.text = "Тесто, Цыпленок, моцарелла, томатный соус"
+        detailLabel.textColor = .darkGray
+        detailLabel.numberOfLines = 0
+        detailLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        
+        verticalStackView.addArrangedSubview(detailLabel)
+    }
+    
+    private func setupPriceButton() {
+        priceButton.setTitle("От 469 руб", for: .normal)
+        priceButton.backgroundColor = .orange.withAlphaComponent(0.1)
+        priceButton.layer.cornerRadius = 20
+        priceButton.setTitleColor(.brown, for: .normal)
+        priceButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        
+        verticalStackView.addArrangedSubview(priceButton)
+    }
+    
+    private func setupProductImageView() {
+        productImageView.image = UIImage(named: "pepperoni")
+        productImageView.contentMode = .scaleAspectFill
+        let width = UIScreen.main.bounds.width
+        productImageView.heightAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
+        productImageView.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
+        
+        contentView.addSubview(productImageView)
+        
+        productImageView.snp.makeConstraints { make in
+            make.left.equalTo(contentView).offset(10)
+            make.centerY.equalTo(contentView)
+        }
+    }
+    
 }
 
