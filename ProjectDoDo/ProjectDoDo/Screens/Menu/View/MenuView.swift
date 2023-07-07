@@ -17,8 +17,7 @@ final class MenuView: UIView {
     
     init() {
         super.init(frame: .zero)
-        instantiateTableView()
-        setupConstraints()
+        setupTableView()
     }
     
     required init?(coder: NSCoder) {
@@ -27,14 +26,14 @@ final class MenuView: UIView {
     
     // MARK: - Private Methods
     
-    private func instantiateTableView() {
+    private func setupTableView() {
         tableView = TableViewManager(frame: self.bounds, style: .plain)
+        
         self.addSubview(tableView)
-    }
-    
-    private func setupConstraints() {
+        
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(safeAreaLayoutGuide)
         }
     }
+    
 }
