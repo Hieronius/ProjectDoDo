@@ -8,6 +8,12 @@
 import UIKit
 import SnapKit
 
+enum MenuSections {
+    case banners
+    case categories
+    case menu
+}
+
 final class TableViewManager: UITableView {
     
     // MARK: - Public Properties
