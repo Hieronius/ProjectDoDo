@@ -81,15 +81,19 @@ extension TableViewManager: UITableViewDataSource {
         
         switch section {
         case .banner:
+            // let cell = BannerCollectionViewManager() as UITableViewCell()
             let cell = dequeueCell(indexPath) as BannerCell
+            return cell
         case .category:
             let cell = dequeueCell(indexPath) as CategoryCell
+            return cell
         case .menu:
             let cell = dequeueCell(indexPath) as ProductCell
             let product = products[indexPath.row]
             cell.update(product)
-        default: UITableViewCell()
+            return cell
+        default:
+            return UITableViewCell()
         }
-        return cell
     }
 }
