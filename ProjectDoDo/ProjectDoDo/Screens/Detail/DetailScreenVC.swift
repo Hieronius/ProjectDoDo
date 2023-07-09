@@ -10,7 +10,7 @@ import SnapKit
 
 final class DetailScreenVC: GenericViewController<DetailView> {
     
-    // MARK: - Private Properties
+    // MARK: - Private properties
     
     private let ingredientService = IngredientService()
     
