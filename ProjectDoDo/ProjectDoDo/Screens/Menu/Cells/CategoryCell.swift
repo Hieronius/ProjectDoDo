@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CategoryCell: UICollectionViewCell {
+final class CategoryCell: UITableViewCell {
     
 }
 

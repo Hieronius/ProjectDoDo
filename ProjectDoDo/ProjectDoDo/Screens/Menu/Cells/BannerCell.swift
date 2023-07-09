@@ -7,6 +7,6 @@
 
 import UIKit
 
-final class BannerCell: UICollectionViewCell {
+final class BannerCell: UITableViewCell {
     
 }
