@@ -25,7 +25,26 @@ final class BannerCollectionViewManager: UICollectionView {
 
 extension BannerCollectionViewManager {
     private func setupCollectionView() {
-        
+        dataSource = self
+        delegate = self
+        registerCell(BannerManagerCell.self)
+    }
+}
+
+// MARK: - BannerCollectionViewManagerDelegate
+
+extension BannerCollectionViewManager: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+}
+
+// MARK: - BannerCollectionViewmanagerDataSource
+
+extension BannerCollectionViewManager: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = dequeueCell(indexPath) as BannerManagerCell
+        return cell
     }
 }
 

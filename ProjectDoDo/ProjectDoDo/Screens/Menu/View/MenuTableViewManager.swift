@@ -14,7 +14,7 @@ enum MenuSection: Int, CaseIterable {
     case menu
 }
 
-final class TableViewManager: UITableView {
+final class MenuTableViewManager: UITableView {
     
     // MARK: - Public Properties
     
@@ -38,7 +38,7 @@ final class TableViewManager: UITableView {
 
 // MARK: - Private Methods
 
-extension TableViewManager {
+extension MenuTableViewManager {
     private func setupTableViewManager() {
         dataSource = self
         delegate = self
@@ -47,9 +47,9 @@ extension TableViewManager {
     }
 }
 
-// MARK: - TableViewManagerDelegate
+// MARK: - MenuTableViewManagerDelegate
 
-extension TableViewManager: UITableViewDelegate {
+extension MenuTableViewManager: UITableViewDelegate {
     
     func numberOfSections(in: UITableView) -> Int {
         return MenuSection.allCases.count
@@ -72,9 +72,9 @@ extension TableViewManager: UITableViewDelegate {
     }
 }
 
-// MARK: - TableViewManagerDataSource
+// MARK: - MenuTableViewManagerDataSource
 
-extension TableViewManager: UITableViewDataSource {
+extension MenuTableViewManager: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var section = MenuSection.init(rawValue: indexPath.section) // 0 -> MenuSection.banner

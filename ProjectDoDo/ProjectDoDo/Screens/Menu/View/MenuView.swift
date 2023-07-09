@@ -11,7 +11,7 @@ final class MenuView: UIView {
     
     // MARK: - Public Properties
     
-    var tableView: TableViewManager!
+    var tableView: MenuTableViewManager!
     
     // MARK: - Initialization
     
@@ -27,7 +27,7 @@ final class MenuView: UIView {
     // MARK: - Private Methods
     
     private func setupTableView() {
-        tableView = TableViewManager(frame: self.bounds, style: .plain)
+        tableView = MenuTableViewManager(frame: self.bounds, style: .plain)
         
         self.addSubview(tableView)
         
