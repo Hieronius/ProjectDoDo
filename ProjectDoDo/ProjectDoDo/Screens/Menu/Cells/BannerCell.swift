@@ -11,12 +11,12 @@ final class BannerCell: UITableViewCell {
     
     // MARK: - Public Properties
     
-    static var reuseID = "BannerCell"
+    static let reuseID = "BannerCell"
     
     // MARK: - Private Properties
     
     private var container = UIView()
-    private var bannerLable = UILabel()
+    private var bannerLabel = UILabel()
     private var bannerCollectionView = BannerCollectionViewManager()
     
     // MARK: - Initialization
@@ -35,14 +35,18 @@ final class BannerCell: UITableViewCell {
     // MARK - Private Methods
     
     private func setupContainer() {
-        
+        container.backgroundColor = UIColor.red
+        container.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        container.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(container)
     }
     
     private func setupBannerLabel() {
+        container.addSubview(bannerLabel)
         
     }
     
     private func setupBannerCollectionView() {
-        
+        container.addSubview(bannerCollectionView)
     }
 }
