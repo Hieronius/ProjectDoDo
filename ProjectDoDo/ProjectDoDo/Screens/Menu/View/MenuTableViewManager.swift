@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-enum MenuSections: CaseIterable {
-    case banners
-    case categories
+enum MenuSection: Int, CaseIterable {
+    case banner
+    case category
     case menu
 }
 
@@ -52,11 +52,23 @@ extension TableViewManager {
 extension TableViewManager: UITableViewDelegate {
     
     func numberOfSections(in: UITableView) -> Int {
-        return MenuSections.allCases.count
+        return MenuSection.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        
+        var section = MenuSection.init(rawValue: section) // 0 -> MenuSection.banner
+        
+        switch section {
+        case .banner:
+            return 1
+        case .category:
+            return 1
+        case .menu:
+            return products.count
+        default:
+            return 1
+        }
     }
 }
 
@@ -65,14 +77,19 @@ extension TableViewManager: UITableViewDelegate {
 extension TableViewManager: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        let section = tableView.section[indexPath]
-//
-//        switch section {
-//
-//        }
-        let cell = dequeueCell(indexPath) as ProductCell
-        let product = products[indexPath.row]
-        cell.update(product)
+        var section = MenuSection.init(rawValue: indexPath.section) // 0 -> MenuSection.banner
+        
+        switch section {
+        case .banner:
+            let cell = dequeueCell(indexPath) as BannerCell
+        case .category:
+            let cell = dequeueCell(indexPath) as CategoryCell
+        case .menu:
+            let cell = dequeueCell(indexPath) as ProductCell
+            let product = products[indexPath.row]
+            cell.update(product)
+        default: UITableViewCell()
+        }
         return cell
     }
 }
