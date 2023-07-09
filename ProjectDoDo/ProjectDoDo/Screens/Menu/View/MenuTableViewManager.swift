@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-enum MenuSections {
+enum MenuSections: CaseIterable {
     case banners
     case categories
     case menu
@@ -50,6 +50,11 @@ extension TableViewManager {
 // MARK: - TableViewManagerDelegate
 
 extension TableViewManager: UITableViewDelegate {
+    
+    func numberOfSections(in: UITableView) -> Int {
+        return MenuSections.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
@@ -59,6 +64,12 @@ extension TableViewManager: UITableViewDelegate {
 
 extension TableViewManager: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+//        let section = tableView.section[indexPath]
+//
+//        switch section {
+//
+//        }
         let cell = dequeueCell(indexPath) as ProductCell
         let product = products[indexPath.row]
         cell.update(product)
