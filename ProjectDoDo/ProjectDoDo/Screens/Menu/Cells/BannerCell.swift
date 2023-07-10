@@ -46,10 +46,10 @@ extension BannerCell {
     
 extension BannerCell {
     private func setupContainer() {
-        container.backgroundColor = UIColor.red
+        container.backgroundColor = UIColor.brown
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
-        container.heightAnchor.constraint(equalToConstant: 0.40 * height).isActive = true
+        container.heightAnchor.constraint(equalToConstant: 0.20 * height).isActive = true
         container.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
         container.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(container)

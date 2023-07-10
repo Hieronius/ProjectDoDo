@@ -70,7 +70,7 @@ extension CategoryCell {
         layout.itemSize = CGSize.init(width: cellSize, height: 1.7 * cellSize)
         
         categoryCollectionView = CategoryCollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
-        categoryCollectionView.backgroundColor = .orange
+        categoryCollectionView.backgroundColor = .red
         
         container.addSubview(categoryCollectionView)
     }
