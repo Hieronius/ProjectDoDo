@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BannerCell: UITableViewCell {
+final class BannerCell: UICollectionViewCell {
     
     // MARK: - Public Properties
     
@@ -21,8 +21,8 @@ final class BannerCell: UITableViewCell {
     
     // MARK: - Initialization
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupContainer()
         setupBannerLabel()
         setupBannerCollectionView()
@@ -32,8 +32,19 @@ final class BannerCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK - Private Methods
+}
     
+// MARK: - Public Methods
+
+extension BannerCell {
+    func update() {
+        
+    }
+}
+    
+// MARK: - UI and constraints
+    
+extension BannerCell {
     private func setupContainer() {
         container.backgroundColor = UIColor.red
         container.heightAnchor.constraint(equalToConstant: 150).isActive = true
