@@ -44,7 +44,7 @@ extension PhotoCollectionCell {
     }
 }
 
-// MARK: - UI and constraints
+// MARK: - UI and Constraints
 
 extension PhotoCollectionCell {
     private func setupPhotoImageView() {
