@@ -49,7 +49,7 @@ extension ProductCell {
     }
 }
 
-// MARK: - UI and constraints
+// MARK: - UI and Constraints
 
 extension ProductCell {
     private func setupVerticalStackView() {

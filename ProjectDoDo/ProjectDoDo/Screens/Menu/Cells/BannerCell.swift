@@ -42,7 +42,7 @@ extension BannerCell {
     }
 }
     
-// MARK: - UI and constraints
+// MARK: - UI and Constraints
     
 extension BannerCell {
     private func setupContainer() {
