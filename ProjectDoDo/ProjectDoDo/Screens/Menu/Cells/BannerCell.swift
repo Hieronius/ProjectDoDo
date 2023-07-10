@@ -17,7 +17,7 @@ final class BannerCell: UITableViewCell {
     
     private var container = UIView()
     private var bannerLabel = UILabel()
-    private var bannerCollectionView = BannerCollectionViewManager()
+    private var bannerCollectionView: BannerCollectionViewManager!
     
     // MARK: - Initialization
     
@@ -63,7 +63,26 @@ extension BannerCell {
     }
     
     private func setupBannerCollectionView() {
+        
+        let itemsCount: CGFloat = 1
+        let padding: CGFloat = 10
+        let paddingCount: CGFloat = itemsCount + 1
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = padding
+        layout.minimumInteritemSpacing = padding
+        
+        let paddingSize = paddingCount * padding
+        let cellSize = (UIScreen.main.bounds.width - paddingSize) / itemsCount
+        
+        layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        layout.itemSize = CGSize.init(width: cellSize, height: 1.7 * cellSize)
+        
+        bannerCollectionView = BannerCollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
+        bannerCollectionView.backgroundColor = .orange
         container.addSubview(bannerCollectionView)
+        
         // constraints for BannerCollectionView here
     }
 }
