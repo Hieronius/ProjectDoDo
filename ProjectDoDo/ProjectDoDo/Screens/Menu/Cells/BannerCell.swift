@@ -40,8 +40,10 @@ final class BannerCell: UITableViewCell {
         container.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(container)
     }
-    
+
     private func setupBannerLabel() {
+        bannerLabel.text = "Выгодно и вкусно"
+        bannerLabel.font = UIFont.boldSystemFont(ofSize: 30)
         container.addSubview(bannerLabel)
         
     }
