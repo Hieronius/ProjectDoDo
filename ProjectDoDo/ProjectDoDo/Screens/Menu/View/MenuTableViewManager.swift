@@ -84,9 +84,11 @@ extension MenuTableViewManager: UITableViewDataSource {
         switch section {
         case .banner:
             let cell = dequeueCell(indexPath) as BannerCell
+            cell.bannerCollectionView.banners = BannerService().fetchProducts()
             return cell
         case .category:
             let cell = dequeueCell(indexPath) as CategoryCell
+            cell.update()
             return cell
         case .menu:
             let cell = dequeueCell(indexPath) as ProductCell

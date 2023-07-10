@@ -40,8 +40,10 @@ final class BannerManagerCell: UICollectionViewCell {
 // MARK: Public Methods
 
 extension BannerManagerCell {
-    func update() {
-        
+    func update(_ product: Product) {
+        productLabel.text = product.name
+        priceLabel.text = "\(product.price) р"
+        productImage.image = UIImage(named: product.image)
     }
 }
 
@@ -52,8 +54,8 @@ extension BannerManagerCell {
         container.backgroundColor = UIColor.blue
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
-        container.heightAnchor.constraint(equalToConstant: 0.40 * height).isActive = true
-        container.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
+        container.heightAnchor.constraint(equalToConstant: 0.20 * height).isActive = true
+        container.widthAnchor.constraint(equalToConstant: 0.20 * width).isActive = true
         contentView.addSubview(container)
     }
     

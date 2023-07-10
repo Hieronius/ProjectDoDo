@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class CollectionViewManager: UICollectionView {
+final class DetailCollectionViewManager: UICollectionView {
     
     // MARK: - Public Properties
     
@@ -33,7 +33,7 @@ final class CollectionViewManager: UICollectionView {
 
 // MARK: - CollectionViewSettings
 
-extension CollectionViewManager {
+extension DetailCollectionViewManager {
     private func setupCollectionView() {
         dataSource = self
         delegate = self
@@ -43,7 +43,7 @@ extension CollectionViewManager {
 
 // MARK: - UICollectionViewDelegate
 
-extension CollectionViewManager: UICollectionViewDelegate {
+extension DetailCollectionViewManager: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ingredients.count
     }
@@ -51,7 +51,7 @@ extension CollectionViewManager: UICollectionViewDelegate {
 
 // MARK: - UICollectionDataSource
 
-extension CollectionViewManager: UICollectionViewDataSource {
+extension DetailCollectionViewManager: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueCell(indexPath) as PhotoCollectionCell

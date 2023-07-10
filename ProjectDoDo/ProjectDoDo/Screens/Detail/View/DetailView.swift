@@ -11,7 +11,7 @@ final class DetailView: UIView {
     
     // MARK: - Public Properties
     
-    var collectionView: CollectionViewManager!
+    var collectionView: DetailCollectionViewManager!
     
     // MARK: - Initialisation
     
@@ -43,7 +43,7 @@ final class DetailView: UIView {
         layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
         layout.itemSize = CGSize.init(width: cellSize, height: 1.7 * cellSize)
         
-        collectionView = CollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
+        collectionView = DetailCollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = .orange
         
         self.addSubview(collectionView)

@@ -36,7 +36,7 @@ final class CategoryCell: UITableViewCell {
 
 extension CategoryCell {
     func update() {
-        
+        print("Hello")
     }
 }
 
@@ -44,7 +44,7 @@ extension CategoryCell {
 
 extension CategoryCell {
     private func setupContainer() {
-        container.backgroundColor = UIColor.yellow
+        container.backgroundColor = UIColor.clear
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
         container.heightAnchor.constraint(equalToConstant: 0.40 * height).isActive = true
@@ -70,7 +70,7 @@ extension CategoryCell {
         layout.itemSize = CGSize.init(width: cellSize, height: 1.7 * cellSize)
         
         categoryCollectionView = CategoryCollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
-        categoryCollectionView.backgroundColor = .red
+        categoryCollectionView.backgroundColor = .clear
         
         container.addSubview(categoryCollectionView)
     }

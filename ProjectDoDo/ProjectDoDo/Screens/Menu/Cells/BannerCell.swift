@@ -15,9 +15,9 @@ final class BannerCell: UITableViewCell {
     
     // MARK: - Private Properties
     
-    private var container = UIView()
-    private var bannerLabel = UILabel()
-    private var bannerCollectionView: BannerCollectionViewManager!
+    var container = UIView()
+    var bannerLabel = UILabel()
+    var bannerCollectionView: BannerCollectionViewManager!
     
     // MARK: - Initialization
     
@@ -37,7 +37,9 @@ final class BannerCell: UITableViewCell {
 // MARK: - Public Methods
 
 extension BannerCell {
-    func update() {
+    func update(_ banner: Product) {
+        let banners = BannerService().fetchProducts()
+        
         
     }
 }
@@ -46,13 +48,19 @@ extension BannerCell {
     
 extension BannerCell {
     private func setupContainer() {
-        container.backgroundColor = UIColor.brown
+        container.backgroundColor = UIColor.clear
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
         container.heightAnchor.constraint(equalToConstant: 0.20 * height).isActive = true
         container.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
         container.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(container)
+        
+        // MARK: CHECK AND REFACTOR CONSTRAINTS
+        
+        container.snp.makeConstraints { make in
+            make.edges.equalTo(self)
+        }
     }
 
     private func setupBannerLabel() {
@@ -80,9 +88,13 @@ extension BannerCell {
         layout.itemSize = CGSize.init(width: cellSize, height: 1.7 * cellSize)
         
         bannerCollectionView = BannerCollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
-        bannerCollectionView.backgroundColor = .orange
+        bannerCollectionView.backgroundColor = .clear
         container.addSubview(bannerCollectionView)
         
-        // constraints for BannerCollectionView here
+        // MARK: CHECK AND REFACTOR CONSTRAINTS
+        
+        bannerCollectionView.snp.makeConstraints { make in
+            make.edges.equalTo(container)
+        }
     }
 }
