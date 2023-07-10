@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BannerCell: UICollectionViewCell {
+final class BannerCell: UITableViewCell {
     
     // MARK: - Public Properties
     
@@ -21,8 +21,8 @@ final class BannerCell: UICollectionViewCell {
     
     // MARK: - Initialization
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupContainer()
         setupBannerLabel()
         setupBannerCollectionView()
@@ -47,7 +47,10 @@ extension BannerCell {
 extension BannerCell {
     private func setupContainer() {
         container.backgroundColor = UIColor.red
-        container.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
+        container.heightAnchor.constraint(equalToConstant: 0.40 * height).isActive = true
+        container.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
         container.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(container)
     }
@@ -61,5 +64,6 @@ extension BannerCell {
     
     private func setupBannerCollectionView() {
         container.addSubview(bannerCollectionView)
+        // constraints for BannerCollectionView here
     }
 }
