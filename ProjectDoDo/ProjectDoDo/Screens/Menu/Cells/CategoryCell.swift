@@ -15,8 +15,8 @@ final class CategoryCell: UITableViewCell {
     
     // MARK: - Private Properties
     
-    private let container = UIView()
-    private let categoryCollectionView = CategoryCollectionViewManager()
+    private var container = UIView()
+    private var categoryCollectionView: CategoryCollectionViewManager!
     
     // MARK: Initialization
     
@@ -53,6 +53,25 @@ extension CategoryCell {
     }
     
     private func setupCategoryCollectionView() {
+        
+        let itemsCount: CGFloat = 1
+        let padding: CGFloat = 10
+        let paddingCount: CGFloat = itemsCount + 1
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = padding
+        layout.minimumInteritemSpacing = padding
+        
+        let paddingSize = paddingCount * padding
+        let cellSize = (UIScreen.main.bounds.width - paddingSize) / itemsCount
+        
+        layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        layout.itemSize = CGSize.init(width: cellSize, height: 1.7 * cellSize)
+        
+        categoryCollectionView = CategoryCollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
+        categoryCollectionView.backgroundColor = .orange
+        
         container.addSubview(categoryCollectionView)
     }
 }
