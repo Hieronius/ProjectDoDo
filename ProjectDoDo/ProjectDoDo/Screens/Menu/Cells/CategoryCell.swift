@@ -22,8 +22,8 @@ final class CategoryCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupContainer()
-        setupCategoryCollectionView()
+//        setupContainer()
+//        setupCategoryCollectionView()
     }
     
     required init(coder: NSCoder) {
@@ -47,8 +47,8 @@ extension CategoryCell {
         container.backgroundColor = UIColor.clear
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
-        container.heightAnchor.constraint(equalToConstant: 0.40 * height).isActive = true
-        container.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
+//        container.heightAnchor.constraint(equalToConstant: 0.40 * height).isActive = true
+//        container.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
         contentView.addSubview(container)
     }
     

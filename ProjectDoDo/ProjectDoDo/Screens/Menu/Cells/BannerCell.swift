@@ -24,8 +24,9 @@ final class BannerCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupContainer()
-        setupBannerLabel()
         setupBannerCollectionView()
+        setupBannerLabel()
+        
     }
     
     required init(coder: NSCoder) {
@@ -51,15 +52,18 @@ extension BannerCell {
         container.backgroundColor = UIColor.blue
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
-        container.heightAnchor.constraint(equalToConstant: 0.20 * height).isActive = true
-        container.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
+        // MARK: FIRST PROBLEM WITH CONSTRAINTS BELOW:
         container.translatesAutoresizingMaskIntoConstraints = false
+         container.heightAnchor.constraint(equalToConstant: 150).isActive = true
+         // container.widthAnchor.constraint(equalToConstant: 200).isActive = true
         contentView.addSubview(container)
-        
-        // MARK: CHECK AND REFACTOR CONSTRAINTS
+    
         
         container.snp.makeConstraints { make in
-            make.edges.equalTo(contentView).offset(10)
+//             make.top.equalTo(contentView).inset(10)
+//             make.bottom.equalTo(contentView).inset(10)
+            make.left.equalTo(contentView)
+            make.right.equalTo(contentView)
         }
     }
 
@@ -73,7 +77,7 @@ extension BannerCell {
     private func setupBannerCollectionView() {
         
         let itemsCount: CGFloat = 1
-        let padding: CGFloat = 10
+        let padding: CGFloat = 20
         let paddingCount: CGFloat = itemsCount + 1
         
         let layout = UICollectionViewFlowLayout()
@@ -81,17 +85,15 @@ extension BannerCell {
         layout.minimumLineSpacing = padding
         layout.minimumInteritemSpacing = padding
         
-        let paddingSize = paddingCount * padding
-        let cellSize = (UIScreen.main.bounds.width - paddingSize) / itemsCount
-        
+//        let paddingSize = paddingCount * padding
+//        let cellSize = (UIScreen.main.bounds.width - paddingSize) / itemsCount
+//
         layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        layout.itemSize = CGSize.init(width: cellSize, height: 1.7 * cellSize)
+//        layout.itemSize = CGSize.init(width: cellSize, height: 1.7 * cellSize)
         
         bannerCollectionView = BannerCollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
-        bannerCollectionView.backgroundColor = .clear
+        bannerCollectionView.backgroundColor = .green
         container.addSubview(bannerCollectionView)
-        
-        // MARK: CHECK AND REFACTOR CONSTRAINTS
         
         bannerCollectionView.snp.makeConstraints { make in
             make.edges.equalTo(container).inset(10)

@@ -46,8 +46,8 @@ extension CategoryManagerCell {
         container.backgroundColor = UIColor.green
         let height = UIScreen.main.bounds.height
         let width = UIScreen.main.bounds.width
-        container.heightAnchor.constraint(equalToConstant: 0.40 * height).isActive = true
-        container.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
+//        container.heightAnchor.constraint(equalToConstant: 0.40 * height).isActive = true
+//        container.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
         contentView.addSubview(container)
     }
     
