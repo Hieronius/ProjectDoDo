@@ -48,7 +48,7 @@ extension BannerCell {
     
 extension BannerCell {
     private func setupContainer() {
-        container.backgroundColor = UIColor.clear
+        container.backgroundColor = UIColor.blue
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
         container.heightAnchor.constraint(equalToConstant: 0.20 * height).isActive = true
@@ -59,7 +59,7 @@ extension BannerCell {
         // MARK: CHECK AND REFACTOR CONSTRAINTS
         
         container.snp.makeConstraints { make in
-            make.edges.equalTo(self)
+            make.edges.equalTo(contentView).offset(10)
         }
     }
 
@@ -94,7 +94,7 @@ extension BannerCell {
         // MARK: CHECK AND REFACTOR CONSTRAINTS
         
         bannerCollectionView.snp.makeConstraints { make in
-            make.edges.equalTo(container)
+            make.edges.equalTo(container).inset(10)
         }
     }
 }

@@ -54,7 +54,7 @@ extension BannerCollectionViewManager: UICollectionViewDelegate {
 extension BannerCollectionViewManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueCell(indexPath) as BannerManagerCell
-        cell.backgroundColor = .clear
+        cell.backgroundColor = .white
         cell.layer.cornerRadius = 15
         cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
         cell.layer.shadowRadius = 15
