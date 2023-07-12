@@ -50,18 +50,25 @@ extension BannerCollectionViewManager: UICollectionViewDelegate {
 
 // MARK: - BannerCollectionViewManagerDataSource
 
-// MARK: Start work here since 11.07.23
 extension BannerCollectionViewManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueCell(indexPath) as BannerManagerCell
         cell.backgroundColor = .brown
-        cell.layer.cornerRadius = 15
+        cell.layer.cornerRadius = 10
         cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
         cell.layer.shadowRadius = 15
         cell.layer.shadowOpacity = 1
         cell.layer.shadowOffset = CGSize(width: 0, height: 15)
         cell.update(banners[indexPath.row])
         return cell
+    }
+}
+
+// MARK: BannerCollectionViewManagerDelegateFlowLayout
+
+extension BannerCollectionViewManager: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width * 0.75, height: collectionView.frame.height - 15)
     }
 }
 

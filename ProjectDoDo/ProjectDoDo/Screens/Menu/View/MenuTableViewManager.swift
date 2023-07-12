@@ -85,9 +85,8 @@ extension MenuTableViewManager: UITableViewDataSource {
         case .banner:
             // MARK: Probably here we should define updates for BannerManagerCells
             let cell = dequeueCell(indexPath) as BannerCell
-            // cell.heightAnchor.constraint(equalToConstant:150).isActive = true
-            cell.contentView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-            cell.bannerCollectionView.banners = BannerService().fetchProducts()
+            cell.contentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+            // cell.bannerCollectionView.banners = BannerService().fetchProducts()
             return cell
         case .category:
             // MARK: Test to remove categories
