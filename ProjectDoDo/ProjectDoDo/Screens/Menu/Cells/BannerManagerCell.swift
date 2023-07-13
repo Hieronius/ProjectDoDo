@@ -17,7 +17,7 @@ final class BannerManagerCell: UICollectionViewCell {
     
     private var container = UIView()
     private var productLabel = UILabel()
-    private var priceLabel = UILabel()
+    private var priceLabel = CustomBannerPriceLabel()
     private var productImage = UIImageView()
     
     
@@ -25,10 +25,11 @@ final class BannerManagerCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame:frame)
-        setupContainer()
-        setupProductLabel()
-        setupPriceLabel()
-        setupProductImage()
+         setupContainer()
+         setupProductImage()
+         setupProductLabel()
+         setupPriceLabel()
+        
     }
     
     required init(coder: NSCoder) {
@@ -80,23 +81,32 @@ extension BannerManagerCell {
     private func setupProductLabel() {
         productLabel.text = "Пицца"
         productLabel.font = UIFont.boldSystemFont(ofSize: 15)
-        // productLabel.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(productLabel)
-        
         productLabel.snp.makeConstraints {
-            $0.top.equalTo(container).inset(5)
-            $0.left.equalTo(productImage).inset(5)
+            $0.top.equalTo(container).inset(15)
+            $0.left.equalTo(productImage.snp.right).offset(10)
+            
+
         }
     }
     
     private func setupPriceLabel() {
         priceLabel.text = "599"
-        priceLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        priceLabel.font = UIFont.systemFont(ofSize: 20)
+        priceLabel.textColor = .brown
+        priceLabel.backgroundColor = .orange.withAlphaComponent(0.1)
+        priceLabel.contentInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        priceLabel.backgroundColor = .blue
+        priceLabel.layer.cornerRadius = 18
+        priceLabel.clipsToBounds = true
+        
         container.addSubview(priceLabel)
         
         priceLabel.snp.makeConstraints {
-            $0.top.equalTo(productLabel).inset(10)
+            $0.top.equalTo(productLabel.snp.bottom).offset(30)
+            $0.left.equalTo(productImage.snp.right).offset(10)
         }
     }
     
 }
+
