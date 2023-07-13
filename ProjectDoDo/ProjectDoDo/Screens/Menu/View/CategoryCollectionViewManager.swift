@@ -9,6 +9,15 @@ import UIKit
 
 final class CategoryCollectionViewManager: UICollectionView {
     
+    // MARK: - Public Properties
+    
+    var categories: [String] = [] {
+        didSet {
+            print(categories.count)
+            self.reloadData()
+        }
+    }
+    
     // MARK: - Initialization
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout ) {
@@ -35,7 +44,7 @@ extension CategoryCollectionViewManager {
 
 extension CategoryCollectionViewManager: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection: Int) -> Int {
-        return 1
+        return categories.count
     }
 }
 
@@ -44,8 +53,16 @@ extension CategoryCollectionViewManager: UICollectionViewDelegate {
 extension CategoryCollectionViewManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueCell(indexPath) as CategoryManagerCell
+        cell.update(categories[indexPath.row])
         return cell
     }
 }
 
+// MARK: - CategoryCOllectionViewManagerDelegateFlowLayout
 
+extension CategoryCollectionViewManager: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // MARK: Should be refactored accordingly to it's internal text size
+        return CGSize(width: collectionView.frame.width * 0.40, height: collectionView.frame.height - 15)
+    }
+}
