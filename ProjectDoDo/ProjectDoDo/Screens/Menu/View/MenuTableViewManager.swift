@@ -20,6 +20,7 @@ final class MenuTableViewManager: UITableView {
     
     var products: [Product] = [] {
         didSet {
+            print("MenuTableCell has been added")
             self.reloadData()
         }
     }
@@ -90,10 +91,8 @@ extension MenuTableViewManager: UITableViewDataSource {
             return cell
         case .category:
             let cell = dequeueCell(indexPath) as CategoryCell
-            // cell.update()
-            let cell = dequeueCell(indexPath) as ProductCell
-            let product = products[indexPath.row]
-            cell.update(product)
+            cell.contentView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+             cell.categoryCollectionView.categories = CategoryService().fetchCategories()
             return cell
         case .menu:
             let cell = dequeueCell(indexPath) as ProductCell
