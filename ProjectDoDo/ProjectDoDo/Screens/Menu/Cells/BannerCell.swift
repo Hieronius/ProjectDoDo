@@ -24,50 +24,42 @@ final class BannerCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupContainer()
-        
         setupBannerLabel()
         setupBannerCollectionView()
-        
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
-    
+
 // MARK: - Public Methods
 
 extension BannerCell {
     func update(_ banner: Product) {
         let banners = BannerService().fetchProducts()
-        
-        
     }
 }
-    
+
 // MARK: - UI and Constraints
-    
+
 extension BannerCell {
     private func setupContainer() {
         container.backgroundColor = UIColor.blue
-        let width = UIScreen.main.bounds.width
-        let height = UIScreen.main.bounds.height
         // MARK: FIRST PROBLEM WITH CONSTRAINTS BELOW:
         container.translatesAutoresizingMaskIntoConstraints = false
-         container.heightAnchor.constraint(equalToConstant: 180).isActive = true
-          //container.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        container.heightAnchor.constraint(equalToConstant: 180).isActive = true
         contentView.addSubview(container)
-    
         
-        container.snp.makeConstraints { make in
-             make.top.equalTo(contentView).inset(10)
-             make.bottom.equalTo(contentView).inset(10)
-            make.left.equalTo(contentView)
-            make.right.equalTo(contentView)
+        container.snp.makeConstraints {
+            $0.top.equalTo(contentView).inset(10)
+            $0.bottom.equalTo(contentView).inset(10)
+            $0.left.equalTo(contentView)
+            $0.right.equalTo(contentView)
         }
     }
-
+    
     private func setupBannerLabel() {
         bannerLabel.text = "Выгодно и вкусно"
         bannerLabel.font = UIFont.boldSystemFont(ofSize: 20)
@@ -102,10 +94,8 @@ extension BannerCell {
         container.addSubview(bannerCollectionView)
         
         bannerCollectionView.snp.makeConstraints {
-            // MARK: THIS CONSTRAINT SHOULD CONNECT BOTTOM ANCHOR OF THE LABEL TO THE TOP ANCHOR OF THE COLLECTION VIEW BUT DOESN'T WORK
-             $0.top.equalTo(bannerLabel.snp.bottom).offset(10)
+            $0.top.equalTo(bannerLabel.snp.bottom).offset(10)
             $0.left.right.bottom.equalTo(container).inset(10)
         }
     }
 }
-//
