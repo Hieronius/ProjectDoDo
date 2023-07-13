@@ -29,7 +29,6 @@ final class BannerManagerCell: UICollectionViewCell {
          setupProductImage()
          setupProductLabel()
          setupPriceLabel()
-        
     }
     
     required init(coder: NSCoder) {
@@ -45,10 +44,6 @@ extension BannerManagerCell {
         productLabel.text = product.name
         priceLabel.text = "\(product.price) р"
         productImage.image = UIImage(named: product.image)
-        print(productLabel.text)
-        print(productLabel.text)
-        print(priceLabel.text)
-        print(priceLabel.text)
     }
 }
 
@@ -56,7 +51,7 @@ extension BannerManagerCell {
 
 extension BannerManagerCell {
     private func setupContainer() {
-        container.backgroundColor = UIColor.red
+        container.backgroundColor = UIColor.clear
         contentView.addSubview(container)
         
         container.snp.makeConstraints {
@@ -72,7 +67,7 @@ extension BannerManagerCell {
         container.addSubview(productImage)
         
         productImage.snp.makeConstraints {
-            $0.left.equalTo(container)
+            $0.left.equalTo(container).inset(10)
             $0.top.equalTo(container)
             $0.bottom.equalTo(container)
         }
@@ -80,7 +75,7 @@ extension BannerManagerCell {
     
     private func setupProductLabel() {
         productLabel.text = "Пицца"
-        productLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        productLabel.font = UIFont.systemFont(ofSize: 15)
         container.addSubview(productLabel)
         productLabel.snp.makeConstraints {
             $0.top.equalTo(container).inset(15)
@@ -96,7 +91,6 @@ extension BannerManagerCell {
         priceLabel.textColor = .brown
         priceLabel.backgroundColor = .orange.withAlphaComponent(0.1)
         priceLabel.contentInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        priceLabel.backgroundColor = .blue
         priceLabel.layer.cornerRadius = 18
         priceLabel.clipsToBounds = true
         
