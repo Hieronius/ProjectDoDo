@@ -46,8 +46,7 @@ extension BannerCell {
 
 extension BannerCell {
     private func setupContainer() {
-        container.backgroundColor = UIColor.blue
-        // MARK: FIRST PROBLEM WITH CONSTRAINTS BELOW:
+        container.backgroundColor = UIColor.clear
         container.translatesAutoresizingMaskIntoConstraints = false
         container.heightAnchor.constraint(equalToConstant: 180).isActive = true
         contentView.addSubview(container)
@@ -90,7 +89,8 @@ extension BannerCell {
         layout.itemSize = CGSize.init(width: 0.3 * cellSize, height: 0.3 * cellSize)
         
         bannerCollectionView = BannerCollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
-        bannerCollectionView.backgroundColor = .green
+        bannerCollectionView.showsHorizontalScrollIndicator = false
+        bannerCollectionView.backgroundColor = .clear
         container.addSubview(bannerCollectionView)
         
         bannerCollectionView.snp.makeConstraints {
