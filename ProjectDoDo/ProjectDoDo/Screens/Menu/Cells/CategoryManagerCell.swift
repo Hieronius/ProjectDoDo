@@ -16,14 +16,14 @@ final class CategoryManagerCell: UICollectionViewCell {
     // MARK: Private Properties
     
     private var container = UIView()
-    private var categoryLabel = UILabel()
+    private var categoryButton = UIButton()
     
     // MARK: Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupContainer()
-        setupCategoryLabel()
+        setupCategoryButton()
     }
     
     required init(coder: NSCoder) {
@@ -34,8 +34,9 @@ final class CategoryManagerCell: UICollectionViewCell {
 // MARK: Public Methods
 
 extension CategoryManagerCell {
-    func update() {
-        
+    func update(_ category: String) {
+        print("this category has been updated")
+        categoryButton.setTitle("\(category)", for: .normal)
     }
 }
 
@@ -43,17 +44,31 @@ extension CategoryManagerCell {
 
 extension CategoryManagerCell {
     private func setupContainer() {
-        container.backgroundColor = UIColor.green
-        let height = UIScreen.main.bounds.height
-        let width = UIScreen.main.bounds.width
-//        container.heightAnchor.constraint(equalToConstant: 0.40 * height).isActive = true
-//        container.widthAnchor.constraint(equalToConstant: 0.40 * width).isActive = true
+        contentView.backgroundColor = .clear
         contentView.addSubview(container)
+        
+        container.snp.makeConstraints {
+            $0.top.bottom.equalTo(contentView).inset(10)
+            $0.left.right.equalTo(contentView).inset(30)
+        }
+        
     }
     
-    private func setupCategoryLabel() {
-        categoryLabel.text = "Пицца"
-        categoryLabel.font = UIFont.boldSystemFont(ofSize: 15)
-        container.addSubview(categoryLabel)
+    private func setupCategoryButton() {
+        categoryButton.setTitle("Категория", for: .normal)
+        categoryButton.backgroundColor = .orange.withAlphaComponent(0.1)
+        categoryButton.layer.cornerRadius = 20
+        categoryButton.setTitleColor(.brown, for: .normal)
+        // categoryButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        
+        container.addSubview(categoryButton)
+        
+        categoryButton.snp.makeConstraints {
+            // $0.edges.equalTo(container)
+//            $0.left.equalTo(container.snp.left)
+//            $0.right.equalTo(container.snp.right)
+            $0.top.bottom.equalTo(container)
+            $0.left.right.equalTo(container)
+        }
     }
 }
