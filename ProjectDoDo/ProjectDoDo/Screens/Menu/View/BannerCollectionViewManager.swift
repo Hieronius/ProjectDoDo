@@ -53,12 +53,13 @@ extension BannerCollectionViewManager: UICollectionViewDelegate {
 extension BannerCollectionViewManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueCell(indexPath) as BannerManagerCell
-        cell.backgroundColor = .brown
+        cell.backgroundColor = .clear
         cell.layer.cornerRadius = 10
-        cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
-        cell.layer.shadowRadius = 15
-        cell.layer.shadowOpacity = 1
-        cell.layer.shadowOffset = CGSize(width: 0, height: 15)
+        // MARK: Configure cell's shadow
+        // cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
+        // cell.layer.shadowRadius = 15
+        // cell.layer.shadowOpacity = 1
+        // cell.layer.shadowOffset = CGSize(width: 0, height: 5)
         cell.update(banners[indexPath.row])
         return cell
     }
