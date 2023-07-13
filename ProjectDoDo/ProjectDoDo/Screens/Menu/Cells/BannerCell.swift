@@ -13,8 +13,6 @@ final class BannerCell: UITableViewCell {
     
     static let reuseID = "BannerCell"
     
-    // MARK: - Private Properties
-    
     var container = UIView()
     var bannerLabel = UILabel()
     var bannerCollectionView: BannerCollectionViewManager!
@@ -38,6 +36,7 @@ final class BannerCell: UITableViewCell {
 
 extension BannerCell {
     func update(_ banner: Product) {
+        print("loadBanners")
         let banners = BannerService().fetchProducts()
     }
 }
@@ -46,9 +45,6 @@ extension BannerCell {
 
 extension BannerCell {
     private func setupContainer() {
-        container.backgroundColor = UIColor.clear
-        container.translatesAutoresizingMaskIntoConstraints = false
-        container.heightAnchor.constraint(equalToConstant: 180).isActive = true
         contentView.addSubview(container)
         
         container.snp.makeConstraints {
@@ -90,12 +86,11 @@ extension BannerCell {
         
         bannerCollectionView = BannerCollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
         bannerCollectionView.showsHorizontalScrollIndicator = false
-        bannerCollectionView.backgroundColor = .clear
         container.addSubview(bannerCollectionView)
         
         bannerCollectionView.snp.makeConstraints {
             $0.top.equalTo(bannerLabel.snp.bottom).offset(10)
-            $0.left.right.bottom.equalTo(container).inset(10)
+            $0.left.right.bottom.equalTo(container)
         }
     }
 }
