@@ -10,7 +10,7 @@
 		DD8637F92A565C3900E83073 /* MenuTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8637F82A565C3900E83073 /* MenuTableViewManager.swift */; };
 		DD8637FC2A56663100E83073 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8637FB2A56663100E83073 /* MenuView.swift */; };
 		DD88F44B2A5126D9000E6CE9 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F44A2A5126D9000E6CE9 /* Ingredient.swift */; };
-		DD88F44D2A51279B000E6CE9 /* IngredientsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */; };
+		DD88F44D2A51279B000E6CE9 /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F44C2A51279B000E6CE9 /* IngredientService.swift */; };
 		DD898D082A59C6ED00BFDB0A /* BannerCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD898D072A59C6ED00BFDB0A /* BannerCollectionViewManager.swift */; };
 		DD8AC3332A57B2DA0074BB43 /* UITableView + dequeueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AC3322A57B2DA0074BB43 /* UITableView + dequeueCell.swift */; };
 		DD8AC3352A57B6390074BB43 /* UITableViewCell + reuseID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AC3342A57B6390074BB43 /* UITableViewCell + reuseID.swift */; };
@@ -31,6 +31,7 @@
 		DD8CAE162A529D2A0089D4B8 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8CAE152A529D2A0089D4B8 /* GenericViewController.swift */; };
 		DD8D91BA2A5C4956001613CD /* BannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D91B92A5C4956001613CD /* BannerService.swift */; };
 		DD8F125D2A5F9CFB0074BC67 /* CustomBannerPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F125C2A5F9CFB0074BC67 /* CustomBannerPriceLabel.swift */; };
+		DD8F125F2A5FB4140074BC67 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F125E2A5FB4140074BC67 /* CategoryService.swift */; };
 		DD99C3182A5A54DE002B52B1 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99C3172A5A54DE002B52B1 /* BannerCell.swift */; };
 		DD99C31A2A5A54F8002B52B1 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99C3192A5A54F8002B52B1 /* CategoryCell.swift */; };
 		DD99C31C2A5A550E002B52B1 /* CategoryCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99C31B2A5A550E002B52B1 /* CategoryCollectionViewManager.swift */; };
@@ -43,7 +44,7 @@
 		DD8637F82A565C3900E83073 /* MenuTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewManager.swift; sourceTree = "<group>"; };
 		DD8637FB2A56663100E83073 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DD88F44A2A5126D9000E6CE9 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
-		DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsService.swift; sourceTree = "<group>"; };
+		DD88F44C2A51279B000E6CE9 /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
 		DD898D072A59C6ED00BFDB0A /* BannerCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewManager.swift; sourceTree = "<group>"; };
 		DD8AC3322A57B2DA0074BB43 /* UITableView + dequeueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + dequeueCell.swift"; sourceTree = "<group>"; };
 		DD8AC3342A57B6390074BB43 /* UITableViewCell + reuseID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell + reuseID.swift"; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		DD8CAE152A529D2A0089D4B8 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
 		DD8D91B92A5C4956001613CD /* BannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerService.swift; sourceTree = "<group>"; };
 		DD8F125C2A5F9CFB0074BC67 /* CustomBannerPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBannerPriceLabel.swift; sourceTree = "<group>"; };
+		DD8F125E2A5FB4140074BC67 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		DD99C3172A5A54DE002B52B1 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		DD99C3192A5A54F8002B52B1 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		DD99C31B2A5A550E002B52B1 /* CategoryCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewManager.swift; sourceTree = "<group>"; };
@@ -149,8 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				DD8C1C092A4E85E200BDEDB7 /* ProductService.swift */,
-				DD88F44C2A51279B000E6CE9 /* IngredientsService.swift */,
+				DD88F44C2A51279B000E6CE9 /* IngredientService.swift */,
 				DD8D91B92A5C4956001613CD /* BannerService.swift */,
+				DD8F125E2A5FB4140074BC67 /* CategoryService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -318,9 +321,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD88F44D2A51279B000E6CE9 /* IngredientsService.swift in Sources */,
+				DD88F44D2A51279B000E6CE9 /* IngredientService.swift in Sources */,
 				DD99C3202A5A73A7002B52B1 /* CategoryManagerCell.swift in Sources */,
 				DD88F44B2A5126D9000E6CE9 /* Ingredient.swift in Sources */,
+				DD8F125F2A5FB4140074BC67 /* CategoryService.swift in Sources */,
 				DD8D91BA2A5C4956001613CD /* BannerService.swift in Sources */,
 				DD8B67A42A4DD313005251F0 /* MenuScreenVC.swift in Sources */,
 				DD8B67A02A4DD313005251F0 /* AppDelegate.swift in Sources */,
