@@ -13,8 +13,9 @@ final class CategoryCollectionViewManager: UICollectionView {
     
     var categories: [String] = [] {
         didSet {
-            print(categories.count)
-            self.reloadData()
+            Task {
+                self.reloadData()
+             }
         }
     }
     
