@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
 
-        let initialVC = MenuScreenVC()
+        let initialVC = DetailScreenVC()
         let navigationController = UINavigationController(rootViewController: initialVC)
         window?.windowScene = windowScene
         self.window?.rootViewController = navigationController

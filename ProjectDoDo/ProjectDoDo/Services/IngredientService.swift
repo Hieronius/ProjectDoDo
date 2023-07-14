@@ -9,22 +9,22 @@ import Foundation
 
 final class IngredientService {
     
-    let ingredients: [Ingredient] = [
-        Ingredient(name: "Маринованные огурчики", priceLabel: 79, image: "cucumber"),
-        Ingredient(name: "Свежие томаты", priceLabel: 59, image: "tomato"),
-        Ingredient(name: "Сладкий перец", priceLabel: 59, image: "pepper"),
-        Ingredient(name: "Маринованные огурчики", priceLabel: 79, image: "cucumber"),
-        Ingredient(name: "Свежие томаты", priceLabel: 59, image: "tomato"),
-        Ingredient(name: "Сладкий перец", priceLabel: 59, image: "pepper"),
-        Ingredient(name: "Маринованные огурчики", priceLabel: 79, image: "cucumber"),
-        Ingredient(name: "Свежие томаты", priceLabel: 59, image: "tomato"),
-        Ingredient(name: "Сладкий перец", priceLabel: 59, image: "pepper"),
-        Ingredient(name: "Маринованные огурчики", priceLabel: 79, image: "cucumber"),
-        Ingredient(name: "Свежие томаты", priceLabel: 59, image: "tomato"),
-        Ingredient(name: "Сладкий перец", priceLabel: 59, image: "pepper")
+    let ingredients: [Product] = [
+        Product(name: "Маринованные огурчики", price: 79, image: "cucumber"),
+        Product(name: "Свежие томаты", price: 59, image: "tomato"),
+        Product(name: "Сладкий перец", price: 59, image: "pepper"),
+        Product(name: "Маринованные огурчики", price: 79, image: "cucumber"),
+        Product(name: "Свежие томаты", price: 59, image: "tomato"),
+        Product(name: "Сладкий перец", price: 59, image: "pepper"),
+        Product(name: "Маринованные огурчики", price: 79, image: "cucumber"),
+        Product(name: "Свежие томаты", price: 59, image: "tomato"),
+        Product(name: "Сладкий перец", price: 59, image: "pepper"),
+        Product(name: "Маринованные огурчики", price: 79, image: "cucumber"),
+        Product(name: "Свежие томаты", price: 59, image: "tomato"),
+        Product(name: "Сладкий перец", price: 59, image: "pepper")
     ]
     
-    func fetchIngredients() -> [Ingredient] {
+    func fetchIngredients() -> [Product] {
         return ingredients
     }
 }

@@ -12,7 +12,7 @@ final class DetailCollectionViewManager: UICollectionView {
     
     // MARK: - Public Properties
     
-    var ingredients: [Ingredient] = [] {
+    var ingredients: [Product] = [] {
         didSet {
             Task {
                 self.reloadData()

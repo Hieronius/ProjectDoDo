@@ -37,9 +37,9 @@ final class PhotoCollectionCell: UICollectionViewCell {
 // MARK: - Public Methods
 
 extension PhotoCollectionCell {
-    func update(_ product: Ingredient) {
+    func update(_ product: Product) {
         nameLabel.text = product.name
-        priceLabel.text = "\(product.priceLabel) р"
+        priceLabel.text = "\(product.price) р"
         photoImageView.image = UIImage(named: product.image)
     }
 }
