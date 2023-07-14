@@ -14,7 +14,9 @@ final class DetailCollectionViewManager: UICollectionView {
     
     var ingredients: [Ingredient] = [] {
         didSet {
-            self.reloadData()
+            Task {
+                self.reloadData()
+            }
         }
     }
     
