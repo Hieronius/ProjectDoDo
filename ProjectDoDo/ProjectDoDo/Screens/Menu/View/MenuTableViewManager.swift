@@ -20,8 +20,9 @@ final class MenuTableViewManager: UITableView {
     
     var products: [Product] = [] {
         didSet {
-            print("MenuTableCell has been added")
-            self.reloadData()
+            Task {
+                self.reloadData()
+            }
         }
     }
     
