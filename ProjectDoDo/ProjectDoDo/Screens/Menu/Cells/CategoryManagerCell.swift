@@ -33,7 +33,6 @@ final class CategoryManagerCell: UICollectionViewCell {
 
 extension CategoryManagerCell {
     func update(_ category: String) {
-        print("this category has been updated")
         categoryButton.setTitle("\(category)", for: .normal)
     }
 }

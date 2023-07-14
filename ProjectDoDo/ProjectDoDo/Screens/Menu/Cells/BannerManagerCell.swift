@@ -9,11 +9,11 @@ import UIKit
 
 final class BannerManagerCell: UICollectionViewCell {
     
-    // MARK: Public Properties
+    // MARK: - Public Properties
     
     static let reuseID = "BannerManagerCell"
     
-    // MARK: Private Properties
+    // MARK: - Private Properties
     
     private var container = UIView()
     private var productLabel = UILabel()
@@ -21,7 +21,7 @@ final class BannerManagerCell: UICollectionViewCell {
     private var productImage = UIImageView()
     
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -37,7 +37,7 @@ final class BannerManagerCell: UICollectionViewCell {
     
 }
 
-// MARK: Public Methods
+// MARK: - Public Methods
 
 extension BannerManagerCell {
     func update(_ product: Product) {
@@ -47,7 +47,7 @@ extension BannerManagerCell {
     }
 }
 
-// MARK: UI and Constraints
+// MARK: - UI and Constraints
 
 extension BannerManagerCell {
     private func setupContainer() {
@@ -80,8 +80,6 @@ extension BannerManagerCell {
         productLabel.snp.makeConstraints {
             $0.top.equalTo(container).inset(15)
             $0.left.equalTo(productImage.snp.right).offset(10)
-            
-
         }
     }
     

@@ -21,7 +21,7 @@ final class DetailCollectionViewManager: UICollectionView {
     }
     
     // MARK: - Initialization
-    /// WIth this initializer we wan't define our DetailVC as "frame" for collectionView and layout as a private property of DetailVC
+
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
          setupCollectionView()

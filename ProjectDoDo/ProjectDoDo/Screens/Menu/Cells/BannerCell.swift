@@ -32,15 +32,6 @@ final class BannerCell: UITableViewCell {
 
 }
 
-// MARK: - Public Methods
-
-extension BannerCell {
-    func update(_ banner: Product) {
-        print("loadBanners")
-        let banners = BannerService().fetchProducts()
-    }
-}
-
 // MARK: - UI and Constraints
 
 extension BannerCell {

@@ -30,15 +30,6 @@ final class CategoryCell: UITableViewCell {
     
 }
 
-// MARK: Public Methods
-
-extension CategoryCell {
-    func update() {
-        print("Hello")
-        
-    }
-}
-
 // MARK: UI and Constraints
 
 extension CategoryCell {
