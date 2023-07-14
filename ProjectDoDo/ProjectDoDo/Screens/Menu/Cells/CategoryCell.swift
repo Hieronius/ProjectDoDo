@@ -57,6 +57,7 @@ extension CategoryCell {
         let paddingCount: CGFloat = itemsCount + 1
         
         let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = padding
         layout.minimumInteritemSpacing = padding
