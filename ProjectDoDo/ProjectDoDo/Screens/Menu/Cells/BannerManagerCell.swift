@@ -85,7 +85,6 @@ extension BannerManagerCell {
     
     private func setupPriceLabel() {
         priceLabel.text = "599"
-        priceLabel.font = UIFont.systemFont(ofSize: 20)
         priceLabel.textColor = .brown
         priceLabel.backgroundColor = .orange.withAlphaComponent(0.1)
         priceLabel.contentInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
