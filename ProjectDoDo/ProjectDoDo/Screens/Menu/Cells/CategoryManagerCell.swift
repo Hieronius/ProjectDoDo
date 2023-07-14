@@ -9,20 +9,18 @@ import UIKit
 
 final class CategoryManagerCell: UICollectionViewCell {
     
-    // MARK: Public Properties
+    // MARK: - Public Properties
     
     static let reuseID = "CategoryManagerCell"
     
-    // MARK: Private Properties
+    // MARK: - Private Properties
     
-    private var container = UIView()
     private var categoryButton = UIButton()
     
-    // MARK: Initialization
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupContainer()
         setupCategoryButton()
     }
     
@@ -31,7 +29,7 @@ final class CategoryManagerCell: UICollectionViewCell {
     }
 }
 
-// MARK: Public Methods
+// MARK: - Public Methods
 
 extension CategoryManagerCell {
     func update(_ category: String) {
@@ -40,35 +38,40 @@ extension CategoryManagerCell {
     }
 }
 
-// MARK: UI and Constraints
+// MARK: - Private Methods
 
 extension CategoryManagerCell {
-    private func setupContainer() {
-        contentView.backgroundColor = .clear
-        contentView.addSubview(container)
-        
-        container.snp.makeConstraints {
-            $0.top.bottom.equalTo(contentView).inset(10)
-            $0.left.right.equalTo(contentView).inset(30)
+    @objc private func categoryButtonTapped(sender: UIButton) {
+        if !sender.isSelected {
+            sender.setTitleColor(.brown, for: .selected)
+            sender.backgroundColor = .orange.withAlphaComponent(0.1)
+            sender.isSelected.toggle()
+
+        } else {
+            categoryButton.backgroundColor = .lightGray.withAlphaComponent(0.1)
+            sender.isSelected.toggle()
         }
-        
     }
+}
+
+// MARK: - UI and Constraints
+
+extension CategoryManagerCell {
     
     private func setupCategoryButton() {
         categoryButton.setTitle("Категория", for: .normal)
-        categoryButton.backgroundColor = .orange.withAlphaComponent(0.1)
+        categoryButton.setTitleColor(.gray, for: .normal)
+        categoryButton.backgroundColor = .lightGray.withAlphaComponent(0.1)
         categoryButton.layer.cornerRadius = 20
-        categoryButton.setTitleColor(.brown, for: .normal)
-        // categoryButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        categoryButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
         
-        container.addSubview(categoryButton)
+        categoryButton.addTarget(self, action: #selector(categoryButtonTapped(sender:)), for: .touchUpInside)
+        
+        contentView.addSubview(categoryButton)
         
         categoryButton.snp.makeConstraints {
-            // $0.edges.equalTo(container)
-//            $0.left.equalTo(container.snp.left)
-//            $0.right.equalTo(container.snp.right)
-            $0.top.bottom.equalTo(container)
-            $0.left.right.equalTo(container)
+            $0.top.bottom.equalTo(contentView)
+            $0.left.right.equalTo(contentView)
         }
     }
 }
