@@ -13,7 +13,9 @@ final class BannerCollectionViewManager: UICollectionView {
     
     var banners: [Product] = [] {
         didSet {
-            self.reloadData()
+            Task {
+                self.reloadData()
+             }
         }
     }
     
