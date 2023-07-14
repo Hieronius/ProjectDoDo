@@ -57,12 +57,3 @@ extension CategoryCollectionViewManager: UICollectionViewDataSource {
         return cell
     }
 }
-
-// MARK: - CategoryCOllectionViewManagerDelegateFlowLayout
-
-extension CategoryCollectionViewManager: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // MARK: Should be refactored accordingly to it's internal text size
-        return CGSize(width: collectionView.frame.width * 0.40, height: collectionView.frame.height - 15)
-    }
-}
