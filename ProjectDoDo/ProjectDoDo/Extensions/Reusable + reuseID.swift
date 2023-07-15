@@ -7,13 +7,21 @@
 
 import UIKit
 
-protocol Reusable {}
+protocol Reusable {
+    static var reuseID: String { get }
+}
 
-extension UITableViewCell: Reusable {}
-
-extension Reusable where Self: UITableViewCell {
-    
+extension Reusable {
     static var reuseID: String {
         return String.init(describing: self)
     }
 }
+
+extension UICollectionViewCell: Reusable {}
+
+extension UITableViewCell: Reusable {}
+
+
+
+
+
