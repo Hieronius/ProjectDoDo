@@ -9,12 +9,9 @@ import UIKit
 
 final class CustomBannerPriceLabel: UILabel {
     
-    var contentInsets = UIEdgeInsets.zero
+    // MARK: Public Properties
     
-    override func drawText(in rect: CGRect) {
-        let insetRect = rect.inset(by: contentInsets)
-        super.drawText(in: insetRect)
-    }
+    var contentInsets = UIEdgeInsets.zero
     
     override var intrinsicContentSize: CGSize {
         return addInsets(to: super.intrinsicContentSize)
@@ -23,6 +20,15 @@ final class CustomBannerPriceLabel: UILabel {
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         return addInsets(to: super.sizeThatFits(size))
     }
+    
+    // MARK: Initialization
+    
+    override func drawText(in rect: CGRect) {
+        let insetRect = rect.inset(by: contentInsets)
+        super.drawText(in: insetRect)
+    }
+    
+    // MARK: Private Methods
     
     private func addInsets(to size: CGSize) -> CGSize {
         let width = size.width + contentInsets.left + contentInsets.right
