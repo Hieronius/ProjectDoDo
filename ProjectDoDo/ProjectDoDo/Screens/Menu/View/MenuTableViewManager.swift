@@ -30,7 +30,7 @@ final class MenuTableViewManager: UITableView {
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
-        setupTableViewManager()
+         setupTableViewManager()
     }
     
     required init?(coder: NSCoder) {
@@ -80,9 +80,9 @@ extension MenuTableViewManager: UITableViewDelegate {
 
 extension MenuTableViewManager: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         var section = MenuSection.init(rawValue: indexPath.section) // 0 -> MenuSection.banner
-        
+
         switch section {
         case .banner:
             // MARK: Probably here we should define updates for BannerManagerCells
@@ -90,19 +90,19 @@ extension MenuTableViewManager: UITableViewDataSource {
             cell.contentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
             cell.bannerCollectionView.banners = BannerService().fetchProducts()
             return cell
-            
+
         case .category:
             let cell = dequeueCell(indexPath) as CategoryCell
             cell.contentView.heightAnchor.constraint(equalToConstant: 60).isActive = true
              cell.categoryCollectionView.categories = CategoryService().fetchCategories()
             return cell
-            
+
         case .menu:
             let cell = dequeueCell(indexPath) as ProductCell
             let product = products[indexPath.row]
             cell.update(product)
             return cell
-            
+
         default:
             return UITableViewCell()
         }
