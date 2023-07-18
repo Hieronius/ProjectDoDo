@@ -12,4 +12,5 @@ struct Banner {
     var price: Int
     var image: String
     var type: String
+    var counter: Int
 }
