@@ -11,11 +11,9 @@ final class BannerCollectionViewManager: UICollectionView {
     
     // MARK: - Public Properties
     
-    var banners: [Product] = [] {
+    var banners: [Banner] = [] {
         didSet {
-            Task {
-                self.reloadData()
-             }
+            self.reloadData()
         }
     }
     
@@ -37,11 +35,11 @@ extension BannerCollectionViewManager {
     private func setupCollectionView() {
         dataSource = self
         delegate = self
-        registerCell(BannerManagerCell.self)
+        registerCell(BannerCollectionCell.self)
     }
 }
 
-// MARK: - BannerCollectionViewManagerDelegate
+// MARK: - UICollectionViewDelegate
 
 extension BannerCollectionViewManager: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -49,19 +47,21 @@ extension BannerCollectionViewManager: UICollectionViewDelegate {
     }
 }
 
-// MARK: - BannerCollectionViewManagerDataSource
+// MARK: - UICollectionViewDataSource
 
 extension BannerCollectionViewManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueCell(indexPath) as BannerManagerCell
+        let cell = dequeueCell(indexPath) as BannerCollectionCell
+        #warning("Cell style separate to cell")
         cell.backgroundColor = .clear
         cell.layer.cornerRadius = 10
+        //
         cell.update(banners[indexPath.row])
         return cell
     }
 }
 
-// MARK: BannerCollectionViewManagerDelegateFlowLayout
+// MARK: UICollectionViewDelegateFlowLayout
 
 extension BannerCollectionViewManager: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
