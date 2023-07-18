@@ -29,6 +29,12 @@ final class BannerCell: UITableViewCell {
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //MARK: - Public
+    
+    func update(_ banners: [Banner]) {
+         bannerCollectionView.banners = banners
+    }
 
 }
 
