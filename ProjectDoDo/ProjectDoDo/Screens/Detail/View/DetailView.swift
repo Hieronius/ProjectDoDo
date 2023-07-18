@@ -18,7 +18,6 @@ final class DetailView: UIView {
     init() {
         super.init(frame: .zero)
         setupCollectionView()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -48,8 +47,8 @@ final class DetailView: UIView {
         
         self.addSubview(collectionView)
         
-        self.collectionView.snp.makeConstraints { make in
-            make.edges.equalTo(self.safeAreaLayoutGuide)
+        self.collectionView.snp.makeConstraints {
+            $0.edges.equalTo(self.safeAreaLayoutGuide)
         }
     }
    
