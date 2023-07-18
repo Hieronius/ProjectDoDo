@@ -10,15 +10,15 @@ import Foundation
 final class ProductService {
     
     let products: [Product] = [
-    Product(name: "Гавайская", detail: "Тесто, Сыр, Буженина", price: 590, image: "hawaii"),
-    Product(name: "Маргарита", detail: "Тесто, Сыр, Колбаска", price: 650, image: "margarita"),
-    Product(name: "Пепперони", detail: "Тесто, Сыр, Перец, Томат, Лук", price: 710, image: "pepperoni"),
-    Product(name: "Гавайская", detail: "Тесто, Сыр, Буженина", price: 590, image: "hawaii"),
-    Product(name: "Маргарита", detail: "Тесто, Сыр, Колбаска", price: 650, image: "margarita"),
-    Product(name: "Пепперони", detail: "Тесто, Сыр, Перец, Томат, Лук", price: 710, image: "pepperoni"),
-    Product(name: "Гавайская", detail: "Тесто, Сыр, Буженина", price: 590, image: "hawaii"),
-    Product(name: "Маргарита", detail: "Тесто, Сыр, Колбаска", price: 650, image: "margarita"),
-    Product(name: "Пепперони", detail: "Тесто, Сыр, Перец, Томат, Лук", price: 710, image: "pepperoni")
+        Product(name: "Гавайская", detail: "Тесто, Сыр, Буженина", price: 590, image: "hawaii", type: "product", counter: 0),
+        Product(name: "Маргарита", detail: "Тесто, Сыр, Колбаска", price: 650, image: "margarita", type: "product", counter: 0),
+        Product(name: "Пепперони", detail: "Тесто, Сыр, Перец, Томат, Лук", price: 710, image: "pepperoni", type: "product", counter: 0),
+        Product(name: "Гавайская", detail: "Тесто, Сыр, Буженина", price: 590, image: "hawaii", type: "product", counter: 0),
+        Product(name: "Маргарита", detail: "Тесто, Сыр, Колбаска", price: 650, image: "margarita", type: "product", counter: 0),
+        Product(name: "Пепперони", detail: "Тесто, Сыр, Перец, Томат, Лук", price: 710, image: "pepperoni", type: "product", counter: 0),
+        Product(name: "Гавайская", detail: "Тесто, Сыр, Буженина", price: 590, image: "hawaii", type: "product", counter: 0),
+        Product(name: "Маргарита", detail: "Тесто, Сыр, Колбаска", price: 650, image: "margarita", type: "product", counter: 0),
+        Product(name: "Пепперони", detail: "Тесто, Сыр, Перец, Томат, Лук", price: 710, image: "pepperoni", type: "product", counter: 0)
     ]
     
     func fetchProducts() -> [Product] {
