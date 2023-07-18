@@ -37,10 +37,10 @@ final class PhotoCollectionCell: UICollectionViewCell {
 // MARK: - Public Methods
 
 extension PhotoCollectionCell {
-    func update(_ product: Product) {
-        nameLabel.text = product.name
-        priceLabel.text = "\(product.price) р"
-        photoImageView.image = UIImage(named: product.image)
+    func update(_ ingredient: Ingredient) {
+        nameLabel.text = ingredient.name
+        priceLabel.text = "\(ingredient.price) р"
+        photoImageView.image = UIImage(named: ingredient.image)
     }
 }
 
@@ -86,9 +86,9 @@ extension PhotoCollectionCell {
         
         contentView.addSubview(priceLabel)
         
-        priceLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).offset(10)
-            make.left.right.equalTo(contentView)
+        priceLabel.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom).offset(10)
+            $0.left.right.equalTo(contentView)
         }
         
     }
