@@ -9,16 +9,16 @@ import Foundation
 
 final class BannerService {
     
-    let products: [Product] = [
-        Product(name: "Бруслетики", price: 230, image: "Бруслетики"),
-        Product(name: "Пепперони фреш", price: 299, image: "Пепперони фреш"),
-        Product(name: "3 пиццы", price: 1099, image: "3 пиццы"),
-        Product(name: "Додстер", price: 169, image: "Додстер"),
-        Product(name: "Комбо от 599 Р", price: 599, image: "Комбо от 599 Р"),
-        Product(name: "2 соуса", price: 75, image: "2 соуса")
+    let banners: [Banner] = [
+        Banner(name: "Бруслетики", price: 230, image: "Бруслетики", type: "banner", counter: 0),
+        Banner(name: "Пепперони фреш", price: 299, image: "Пепперони фреш", type: "banner", counter: 0),
+        Banner(name: "3 пиццы", price: 1099, image: "3 пиццы", type: "banner", counter: 0),
+        Banner(name: "Додстер", price: 169, image: "Додстер", type: "banner", counter: 0),
+        Banner(name: "Комбо от 599 Р", price: 599, image: "Комбо от 599 Р", type: "banner", counter: 0),
+        Banner(name: "2 соуса", price: 75, image: "2 соуса", type: "banner", counter: 0)
     ]
     
-    func fetchProducts() -> [Product] {
-        return products
+    func fetchBanners() -> [Banner] {
+        return banners
     }
 }
