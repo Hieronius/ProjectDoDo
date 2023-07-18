@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BannerManagerCell: UICollectionViewCell {
+final class BannerCollectionCell: UICollectionViewCell {
     
     // MARK: - Public Properties
     
@@ -39,17 +39,17 @@ final class BannerManagerCell: UICollectionViewCell {
 
 // MARK: - Public Methods
 
-extension BannerManagerCell {
-    func update(_ product: Product) {
-        productLabel.text = product.name
-        priceLabel.text = "\(product.price) р"
-        productImage.image = UIImage(named: product.image)
+extension BannerCollectionCell {
+    func update(_ banner: Banner) {
+        productLabel.text = banner.name
+        priceLabel.text = "\(banner.price) р"
+        productImage.image = UIImage(named: banner.image)
     }
 }
 
 // MARK: - UI and Constraints
 
-extension BannerManagerCell {
+extension BannerCollectionCell {
     private func setupContainer() {
         container.backgroundColor = UIColor.clear
         contentView.addSubview(container)
