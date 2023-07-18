@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CategoryManagerCell: UICollectionViewCell {
+final class CategoryCollectionCell: UICollectionViewCell {
     
     // MARK: - Public Properties
     
@@ -31,15 +31,15 @@ final class CategoryManagerCell: UICollectionViewCell {
 
 // MARK: - Public Methods
 
-extension CategoryManagerCell {
-    func update(_ category: String) {
-        categoryButton.setTitle("\(category)", for: .normal)
+extension CategoryCollectionCell {
+    func update(_ category: Category) {
+        categoryButton.setTitle("\(category.name)", for: .normal)
     }
 }
 
 // MARK: - Private Methods
 
-extension CategoryManagerCell {
+extension CategoryCollectionCell {
     @objc private func categoryButtonTapped(sender: UIButton) {
         if !sender.isSelected {
             sender.setTitleColor(.brown, for: .selected)
@@ -55,7 +55,7 @@ extension CategoryManagerCell {
 
 // MARK: - UI and Constraints
 
-extension CategoryManagerCell {
+extension CategoryCollectionCell {
     
     private func setupCategoryButton() {
         categoryButton.setTitle("Категория", for: .normal)

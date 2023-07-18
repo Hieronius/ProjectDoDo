@@ -11,11 +11,9 @@ final class CategoryCollectionViewManager: UICollectionView {
     
     // MARK: - Public Properties
     
-    var categories: [String] = [] {
+    var categories: [Category] = [] {
         didSet {
-            Task {
                 self.reloadData()
-             }
         }
     }
     
@@ -37,11 +35,11 @@ extension CategoryCollectionViewManager {
     private func setupCollectionView() {
         dataSource = self
         delegate = self
-        registerCell(CategoryManagerCell.self)
+        registerCell(CategoryCollectionCell.self)
     }
 }
 
-// MARK: - CategoryCollectionViewManagerDelegate
+// MARK: - UICollectionViewDelegate
 
 extension CategoryCollectionViewManager: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection: Int) -> Int {
@@ -49,11 +47,11 @@ extension CategoryCollectionViewManager: UICollectionViewDelegate {
     }
 }
 
-// MARK: - CategoryCollectionViewManagerDataSource
+// MARK: - UICollectionViewDataSource
 
 extension CategoryCollectionViewManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueCell(indexPath) as CategoryManagerCell
+        let cell = dequeueCell(indexPath) as CategoryCollectionCell
         cell.update(categories[indexPath.row])
         return cell
     }

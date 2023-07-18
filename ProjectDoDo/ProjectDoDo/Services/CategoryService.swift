@@ -9,9 +9,22 @@ import Foundation
 
 final class CategoryService {
     
-    let categories = ["Пицца", "Комбо", "Коктейли", "Кофе", "Закуски", "Десерты", "Напитки", "Соусы", "Другие товары"]
+    // MARK: - Private Properties
     
-    func fetchCategories() -> [String] {
+    private let categories: [Category] = [
+        Category(name: "Пицца", type: "category"),
+        Category(name: "Комбо", type: "category"),
+        Category(name: "Кофе", type: "category"),
+        Category(name: "Закуски", type: "category"),
+        Category(name: "Десерты", type: "category"),
+        Category(name: "Напитки", type: "category"),
+        Category(name: "Соусы", type: "category"),
+        Category(name: "Другие товары", type: "category")
+    ]
+    
+    // MARK: Public Methods
+    
+    func fetchCategories() -> [Category] {
         return categories
     }
 }

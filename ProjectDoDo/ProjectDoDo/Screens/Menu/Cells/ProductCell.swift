@@ -62,9 +62,9 @@ extension ProductCell {
         
         contentView.addSubview(verticalStackView)
         
-        verticalStackView.snp.makeConstraints { make in
-            make.top.right.bottom.equalTo(contentView).inset(10)
-            make.left.equalTo(productImageView.snp.right).offset(10)
+        verticalStackView.snp.makeConstraints {
+            $0.top.right.bottom.equalTo(contentView).inset(10)
+            $0.left.equalTo(productImageView.snp.right).offset(10)
         }
     }
     
@@ -103,9 +103,9 @@ extension ProductCell {
         
         contentView.addSubview(productImageView)
         
-        productImageView.snp.makeConstraints { make in
-            make.left.equalTo(contentView).offset(10)
-            make.centerY.equalTo(contentView)
+        productImageView.snp.makeConstraints {
+            $0.left.equalTo(contentView).offset(10)
+            $0.centerY.equalTo(contentView)
         }
     }
     

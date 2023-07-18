@@ -31,8 +31,8 @@ final class MenuView: UIView {
         
         self.addSubview(tableView)
         
-        tableView.snp.makeConstraints { make in
-            make.edges.equalTo(safeAreaLayoutGuide)
+        tableView.snp.makeConstraints {
+            $0.edges.equalTo(safeAreaLayoutGuide)
         }
     }
     
