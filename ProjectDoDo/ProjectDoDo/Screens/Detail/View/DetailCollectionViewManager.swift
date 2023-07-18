@@ -12,11 +12,9 @@ final class DetailCollectionViewManager: UICollectionView {
     
     // MARK: - Public Properties
     
-    var ingredients: [Product] = [] {
+    var ingredients: [Ingredient] = [] {
         didSet {
-            Task {
-                self.reloadData()
-            }
+            self.reloadData()
         }
     }
     
@@ -33,7 +31,7 @@ final class DetailCollectionViewManager: UICollectionView {
     
 }
 
-// MARK: - CollectionViewSettings
+// MARK: - Private Methods
 
 extension DetailCollectionViewManager {
     private func setupCollectionView() {
