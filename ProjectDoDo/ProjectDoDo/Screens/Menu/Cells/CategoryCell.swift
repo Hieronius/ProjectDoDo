@@ -28,6 +28,12 @@ final class CategoryCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Public Methods
+    
+    func update(_ categories: [Category]) {
+         categoryCollectionView.categories = categories
+    }
+    
 }
 
 // MARK: UI and Constraints
@@ -56,8 +62,8 @@ extension CategoryCell {
         let paddingSize = paddingCount * padding
         let cellSize = (UIScreen.main.bounds.width - paddingSize) / itemsCount
         
-          layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-          layout.itemSize = CGSize.init(width: 0.3 * cellSize, height: 0.3 * cellSize)
+        layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        layout.itemSize = CGSize.init(width: 0.3 * cellSize, height: 0.3 * cellSize)
         
         categoryCollectionView = CategoryCollectionViewManager(frame: self.bounds, collectionViewLayout: layout)
         
