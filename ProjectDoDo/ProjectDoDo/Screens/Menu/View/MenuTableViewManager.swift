@@ -8,11 +8,6 @@
 import UIKit
 import SnapKit
 
-enum MenuSection: Int, CaseIterable {
-    case banner
-    case category
-    case menu
-}
 
 final class MenuTableViewManager: UITableView {
     
@@ -20,10 +15,28 @@ final class MenuTableViewManager: UITableView {
     
     var products: [Product] = [] {
         didSet {
-            Task {
-                self.reloadData()
-            }
+            self.reloadData()
         }
+    }
+    
+    var banners: [Banner] = [] {
+        didSet {
+            self.reloadData()
+        }
+    }
+    
+    var categories: [Category] = [] {
+        didSet {
+            self.reloadData()
+        }
+    }
+    
+    // MARK: Private Properties
+    
+    private enum MenuSection: Int, CaseIterable {
+        case banner
+        case category
+        case menu
     }
     
     // MARK: - Initialization
@@ -51,7 +64,7 @@ extension MenuTableViewManager {
     }
 }
 
-// MARK: - MenuTableViewManagerDelegate
+// MARK: - UITableViewDelegate
 
 extension MenuTableViewManager: UITableViewDelegate {
     
@@ -61,7 +74,7 @@ extension MenuTableViewManager: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var section = MenuSection.init(rawValue: section) // 0 -> MenuSection.banner
+        let section = MenuSection.init(rawValue: section) // 0 -> MenuSection.banner
         
         switch section {
         case .banner:
@@ -76,25 +89,29 @@ extension MenuTableViewManager: UITableViewDelegate {
     }
 }
 
-// MARK: - MenuTableViewManagerDataSource
+// MARK: - UITableViewDataSource
 
 extension MenuTableViewManager: UITableViewDataSource {
+    
+    #warning("Height of cell put to datasource methodm - tableViewHeightForRow")
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         var section = MenuSection.init(rawValue: indexPath.section) // 0 -> MenuSection.banner
 
         switch section {
         case .banner:
-            // MARK: Probably here we should define updates for BannerManagerCells
             let cell = dequeueCell(indexPath) as BannerCell
             cell.contentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-            cell.bannerCollectionView.banners = BannerService().fetchProducts()
+            cell.update(banners)
             return cell
 
         case .category:
             let cell = dequeueCell(indexPath) as CategoryCell
             cell.contentView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-             cell.categoryCollectionView.categories = CategoryService().fetchCategories()
+//            cell.categoryCollectionView.categories = CategoryService().fetchCategories()
+            cell.update(categories)
             return cell
 
         case .menu:
