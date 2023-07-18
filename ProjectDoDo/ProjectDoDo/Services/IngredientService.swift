@@ -9,22 +9,22 @@ import Foundation
 
 final class IngredientService {
     
-    let ingredients: [Product] = [
-        Product(name: "Маринованные огурчики", price: 79, image: "cucumber"),
-        Product(name: "Свежие томаты", price: 59, image: "tomato"),
-        Product(name: "Сладкий перец", price: 59, image: "pepper"),
-        Product(name: "Маринованные огурчики", price: 79, image: "cucumber"),
-        Product(name: "Свежие томаты", price: 59, image: "tomato"),
-        Product(name: "Сладкий перец", price: 59, image: "pepper"),
-        Product(name: "Маринованные огурчики", price: 79, image: "cucumber"),
-        Product(name: "Свежие томаты", price: 59, image: "tomato"),
-        Product(name: "Сладкий перец", price: 59, image: "pepper"),
-        Product(name: "Маринованные огурчики", price: 79, image: "cucumber"),
-        Product(name: "Свежие томаты", price: 59, image: "tomato"),
-        Product(name: "Сладкий перец", price: 59, image: "pepper")
+    let ingredients: [Ingredient] = [
+        Ingredient(name: "Маринованные огурчики", price: 79, image: "cucumber", type: "ingredient", counter: 0),
+        Ingredient(name: "Свежие томаты", price: 59, image: "tomato", type: "ingredient", counter: 0),
+        Ingredient(name: "Сладкий перец", price: 59, image: "pepper", type: "ingredient", counter: 0),
+        Ingredient(name: "Маринованные огурчики", price: 79, image: "cucumber", type: "ingredient", counter: 0),
+        Ingredient(name: "Свежие томаты", price: 59, image: "tomato", type: "ingredient", counter: 0),
+        Ingredient(name: "Сладкий перец", price: 59, image: "pepper", type: "ingredient", counter: 0),
+        Ingredient(name: "Маринованные огурчики", price: 79, image: "cucumber", type: "ingredient", counter: 0),
+        Ingredient(name: "Свежие томаты", price: 59, image: "tomato", type: "ingredient", counter: 0),
+        Ingredient(name: "Сладкий перец", price: 59, image: "pepper", type: "ingredient", counter: 0),
+        Ingredient(name: "Маринованные огурчики", price: 79, image: "cucumber", type: "ingredient", counter: 0),
+        Ingredient(name: "Свежие томаты", price: 59, image: "tomato", type: "ingredient", counter: 0),
+        Ingredient(name: "Сладкий перец", price: 59, image: "pepper", type: "ingredient", counter: 0)
     ]
     
-    func fetchIngredients() -> [Product] {
+    func fetchIngredients() -> [Ingredient] {
         return ingredients
     }
 }
