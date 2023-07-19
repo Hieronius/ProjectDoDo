@@ -93,23 +93,44 @@ extension MenuTableViewManager: UITableViewDelegate {
 
 extension MenuTableViewManager: UITableViewDataSource {
     
-    #warning("Height of cell put to datasource methodm - tableViewHeightForRow")
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let section = MenuSection.init(rawValue: indexPath.section)
+        var height = CGFloat()
+        
+        switch section {
+        case .banner:
+            height = 200
+            return height
+            
+        case .category:
+            height = 60
+            return height
+            
+        case .menu:
+            height = 160
+            return height
+            
+        default:
+            break
+        }
+        return height
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        var section = MenuSection.init(rawValue: indexPath.section) // 0 -> MenuSection.banner
+        let section = MenuSection.init(rawValue: indexPath.section) // 0 -> MenuSection.banner
 
         switch section {
         case .banner:
             let cell = dequeueCell(indexPath) as BannerCell
-            cell.contentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+             //  cell.contentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
             cell.update(banners)
             return cell
 
         case .category:
             let cell = dequeueCell(indexPath) as CategoryCell
-            cell.contentView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+            // cell.contentView.heightAnchor.constraint(equalToConstant: 60).isActive = true
 //            cell.categoryCollectionView.categories = CategoryService().fetchCategories()
             cell.update(categories)
             return cell
