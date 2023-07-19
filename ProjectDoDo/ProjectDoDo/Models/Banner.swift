@@ -11,6 +11,6 @@ struct Banner {
     var name: String
     var price: Int
     var image: String
-    var type: String
+    var specialOffer: String
     var counter: Int
 }
