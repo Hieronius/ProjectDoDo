@@ -115,14 +115,11 @@ extension MenuTableViewManager: UITableViewDataSource {
         switch section {
         case .banner:
             let cell = dequeueCell(indexPath) as BannerTableCell
-             //  cell.contentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
             cell.update(banners)
             return cell
 
         case .category:
             let cell = dequeueCell(indexPath) as CategoryTableCell
-            // cell.contentView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-//            cell.categoryCollectionView.categories = CategoryService().fetchCategories()
             cell.update(categories)
             return cell
 
