@@ -58,9 +58,9 @@ extension MenuTableViewManager {
         dataSource = self
         delegate = self
         self.separatorStyle = .none
-        registerCell(ProductCell.self)
-        registerCell(BannerCell.self)
-        registerCell(CategoryCell.self)
+        registerCell(ProductTableCell.self)
+        registerCell(BannerTableCell.self)
+        registerCell(CategoryTableCell.self)
     }
 }
 
@@ -123,20 +123,20 @@ extension MenuTableViewManager: UITableViewDataSource {
 
         switch section {
         case .banner:
-            let cell = dequeueCell(indexPath) as BannerCell
+            let cell = dequeueCell(indexPath) as BannerTableCell
              //  cell.contentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
             cell.update(banners)
             return cell
 
         case .category:
-            let cell = dequeueCell(indexPath) as CategoryCell
+            let cell = dequeueCell(indexPath) as CategoryTableCell
             // cell.contentView.heightAnchor.constraint(equalToConstant: 60).isActive = true
 //            cell.categoryCollectionView.categories = CategoryService().fetchCategories()
             cell.update(categories)
             return cell
 
         case .menu:
-            let cell = dequeueCell(indexPath) as ProductCell
+            let cell = dequeueCell(indexPath) as ProductTableCell
             let product = products[indexPath.row]
             cell.update(product)
             return cell

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CategoryCell: UITableViewCell {
+final class CategoryTableCell: UITableViewCell {
     
     // MARK: - Public Properties
     
@@ -38,7 +38,7 @@ final class CategoryCell: UITableViewCell {
 
 // MARK: UI and Constraints
 
-extension CategoryCell {
+extension CategoryTableCell {
     private func setupContainer() {
         contentView.addSubview(container)
         

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProductCell: UITableViewCell {
+final class ProductTableCell: UITableViewCell {
     
     // MARK: - Public Properties
     
@@ -40,7 +40,7 @@ final class ProductCell: UITableViewCell {
 
 // MARK: - Public methods
 
-extension ProductCell {
+extension ProductTableCell {
     func update(_ product: Product) {
         nameLabel.text = product.name
         detailLabel.text = product.detail
@@ -51,7 +51,7 @@ extension ProductCell {
 
 // MARK: - UI and Constraints
 
-extension ProductCell {
+extension ProductTableCell {
     private func setupVerticalStackView() {
         verticalStackView.axis = .vertical
         verticalStackView.spacing = 15

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BannerCell: UITableViewCell {
+final class BannerTableCell: UITableViewCell {
     
     // MARK: - Public Properties
     
@@ -40,7 +40,7 @@ final class BannerCell: UITableViewCell {
 
 // MARK: - UI and Constraints
 
-extension BannerCell {
+extension BannerTableCell {
     private func setupContainer() {
         contentView.addSubview(container)
         
