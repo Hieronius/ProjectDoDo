@@ -19,17 +19,8 @@ final class MenuTableViewManager: UITableView {
         }
     }
     
-    var banners: [Banner] = [] {
-        didSet {
-            self.reloadData()
-        }
-    }
-    
-    var categories: [Category] = [] {
-        didSet {
-            self.reloadData()
-        }
-    }
+    var banners: [Banner] = []
+    var categories: [Category] = []
     
     // MARK: Private Properties
     
