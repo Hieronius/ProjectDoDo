@@ -52,10 +52,6 @@ extension BannerCollectionViewManager: UICollectionViewDelegate {
 extension BannerCollectionViewManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueCell(indexPath) as BannerCollectionCell
-        #warning("Cell style separate to cell")
-        cell.backgroundColor = .clear
-        cell.layer.cornerRadius = 10
-        //
         cell.update(banners[indexPath.row])
         return cell
     }

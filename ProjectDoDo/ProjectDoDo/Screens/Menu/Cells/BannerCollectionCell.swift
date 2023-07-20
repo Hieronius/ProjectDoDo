@@ -54,6 +54,14 @@ extension BannerCollectionCell {
         container.backgroundColor = UIColor.clear
         contentView.addSubview(container)
         
+#warning("Cell style separate to cell. Set it here and do the same with the other cells")
+
+        container.layer.cornerRadius = 10
+        container.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
+        container.layer.shadowRadius = 15
+        container.layer.shadowOpacity = 1
+        container.layer.shadowOffset = CGSize(width: 0, height: 15)
+        
         container.snp.makeConstraints {
             $0.edges.equalTo(contentView)
         }
