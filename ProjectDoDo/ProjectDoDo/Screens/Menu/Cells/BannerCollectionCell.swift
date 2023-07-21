@@ -25,10 +25,10 @@ final class BannerCollectionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame:frame)
-         setupContainer()
-         setupProductImage()
-         setupProductLabel()
-         setupPriceLabel()
+        setupContainer()
+        setupProductImage()
+        setupProductLabel()
+        setupPriceLabel()
     }
     
     required init(coder: NSCoder) {
@@ -50,17 +50,37 @@ extension BannerCollectionCell {
 // MARK: - UI and Constraints
 
 extension BannerCollectionCell {
+    
+    private func customShadowPath(viewLayer layer: CALayer, shadowHeight: CGFloat) -> UIBezierPath {
+        let layerX = layer.bounds.origin.x
+        let layerY = layer.bounds.origin.y
+        let layerWidth = layer.bounds.size.width
+        let layerHeight = layer.bounds.size.height
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint.zero)
+        
+        path.addLine(to: CGPoint(x: layerX + layerWidth, y: layerY))
+        path.addLine(to: CGPoint(x: layerX + layerWidth, y: layerY + 20))
+        path.addCurve(to: CGPoint(x: 0, y: layerHeight), controlPoint1: CGPoint(x: layerX + layerWidth, y: layerHeight), controlPoint2: CGPoint(x: layerX, y: layerHeight))
+        
+        return path
+    }
+    
+    
+    
+    
     private func setupContainer() {
         container.backgroundColor = UIColor.clear
         contentView.addSubview(container)
         
-#warning("Cell style separate to cell. Set it here and do the same with the other cells")
-
-        container.layer.cornerRadius = 10
-        container.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
-        container.layer.shadowRadius = 15
-        container.layer.shadowOpacity = 1
-        container.layer.shadowOffset = CGSize(width: 0, height: 15)
+        container.layer.shadowPath = self.customShadowPath(viewLayer: container.layer, shadowHeight: 5).cgPath
+        
+        container.layer.shadowOffset = CGSize(width: 10, height: 10)
+        container.layer.shadowRadius = 5
+        container.layer.shadowOpacity = 0.5
+        
+         container.layer.shadowPath = self.customShadowPath(viewLayer: container.layer, shadowHeight: 5).cgPath
         
         container.snp.makeConstraints {
             $0.edges.equalTo(contentView)
