@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 
-
 final class MenuTableViewManager: UITableView {
     
     // MARK: - Public Properties
@@ -16,6 +15,7 @@ final class MenuTableViewManager: UITableView {
     var products: [Product] = [] {
         didSet {
             self.reloadData()
+            print("product have been updated")
         }
     }
     
@@ -116,6 +116,7 @@ extension MenuTableViewManager: UITableViewDataSource {
         case .banner:
             let cell = dequeueCell(indexPath) as BannerTableCell
             cell.update(banners)
+            
             return cell
 
         case .category:

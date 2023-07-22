@@ -11,9 +11,13 @@ final class BannerCollectionViewManager: UICollectionView {
     
     // MARK: - Public Properties
     
-    var banners: [Banner] = [] {
+    var banners: [Banner] = []
+    {
         didSet {
-            self.reloadData()
+             self.reloadData()
+//            var visibleCells = self.indexPathsForVisibleItems
+//            self.reloadItems(at: visibleCells)
+            print("banners have been reloaded")
         }
     }
     

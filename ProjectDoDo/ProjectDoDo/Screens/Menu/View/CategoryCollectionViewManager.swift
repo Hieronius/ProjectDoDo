@@ -13,7 +13,8 @@ final class CategoryCollectionViewManager: UICollectionView {
     
     var categories: [Category] = [] {
         didSet {
-                self.reloadData()
+            self.reloadData()
+            print("categories have been reloaded")
         }
     }
     
