@@ -245,12 +245,12 @@
 		DDBE5F202A4DE629006D8DC2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DD924DDA2A6B8424008E082B /* Basket */,
 				DD924DD22A6B80B6008E082B /* TabBar.swift */,
 				DDBE5F212A4DE633006D8DC2 /* Menu */,
 				DD8C1C0C2A4E99AE00BDEDB7 /* Detail */,
-				DD924DD72A6B8382008E082B /* Contacts */,
 				DD924DD42A6B830C008E082B /* Profile */,
+				DD924DD72A6B8382008E082B /* Contacts */,
+				DD924DDA2A6B8424008E082B /* Basket */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
