@@ -25,6 +25,7 @@ final class BannerCollectionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame:frame)
+        // setupContentView()
         setupContainer()
         setupProductImage()
         setupProductLabel()
@@ -60,27 +61,53 @@ extension BannerCollectionCell {
         let path = UIBezierPath()
         path.move(to: CGPoint.zero)
         
-        path.addLine(to: CGPoint(x: layerX + layerWidth, y: layerY))
-        path.addLine(to: CGPoint(x: layerX + layerWidth, y: layerY + 20))
-        path.addCurve(to: CGPoint(x: 0, y: layerHeight), controlPoint1: CGPoint(x: layerX + layerWidth, y: layerHeight), controlPoint2: CGPoint(x: layerX, y: layerHeight))
+        path.addLine(to: CGPoint(x: layerX + layerWidth,
+                                 y: layerY))
+        path.addLine(to: CGPoint(x: layerX + layerWidth,
+                                 y: layerY + 20))
+        path.addCurve(to: CGPoint(x: 0,
+                                  y: layerHeight),
+                      controlPoint1: CGPoint(x: layerX + layerWidth,
+                                             y: layerHeight),
+                      controlPoint2: CGPoint(x: layerX,
+                                             y: layerHeight))
         
         return path
+    }
+    
+    
+    private func setupContentView() {
+        
+        contentView.layer.backgroundColor = UIColor.gray.cgColor
+        contentView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        contentView.layer.shadowRadius = 5
+        contentView.layer.shadowOpacity = 0.5
+        
+        contentView.layer.shadowPath = CGPath(rect: container.bounds, transform: nil)
     }
     
     
     
     
     private func setupContainer() {
-        container.backgroundColor = UIColor.clear
+        // MARK: Should be refactored with a mentor. Shadows won't work with shadowPath
+        container.backgroundColor = UIColor.white
+        container.layer.cornerRadius = 15
+        // container.clipsToBounds = false
+        // container.layer.masksToBounds = false
         contentView.addSubview(container)
         
-        container.layer.shadowPath = self.customShadowPath(viewLayer: container.layer, shadowHeight: 5).cgPath
         
-        container.layer.shadowOffset = CGSize(width: 10, height: 10)
-        container.layer.shadowRadius = 5
-        container.layer.shadowOpacity = 0.5
+        // container.layer.shadowOffset = CGSize(width: 10, height: 10)
+        container.layer.shadowOffset = .zero
+        container.layer.shadowRadius = 3
+        container.layer.shadowOpacity = 0.1
+        container.layer.shadowColor = UIColor.black.cgColor
+        // container.layer.shadowPath = UIBezierPath(rect: container.bounds).cgPath
+        // container.layer.shadowPath = self.customShadowPath(viewLayer: container.layer, shadowHeight: 5).cgPath
         
-         container.layer.shadowPath = self.customShadowPath(viewLayer: container.layer, shadowHeight: 5).cgPath
+        
+        
         
         container.snp.makeConstraints {
             $0.edges.equalTo(contentView)
