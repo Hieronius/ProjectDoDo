@@ -34,6 +34,7 @@
 		DD8F125D2A5F9CFB0074BC67 /* CustomBannerPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F125C2A5F9CFB0074BC67 /* CustomBannerPriceLabel.swift */; };
 		DD8F125F2A5FB4140074BC67 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F125E2A5FB4140074BC67 /* CategoryService.swift */; };
 		DD924DD32A6B80B6008E082B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD924DD22A6B80B6008E082B /* TabBar.swift */; };
+		DD924DD62A6B8322008E082B /* ProfileScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD924DD52A6B8322008E082B /* ProfileScreenVC.swift */; };
 		DD99C3182A5A54DE002B52B1 /* BannerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99C3172A5A54DE002B52B1 /* BannerTableCell.swift */; };
 		DD99C31A2A5A54F8002B52B1 /* CategoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99C3192A5A54F8002B52B1 /* CategoryTableCell.swift */; };
 		DD99C31C2A5A550E002B52B1 /* CategoryCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99C31B2A5A550E002B52B1 /* CategoryCollectionViewManager.swift */; };
@@ -71,6 +72,7 @@
 		DD8F125C2A5F9CFB0074BC67 /* CustomBannerPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBannerPriceLabel.swift; sourceTree = "<group>"; };
 		DD8F125E2A5FB4140074BC67 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		DD924DD22A6B80B6008E082B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		DD924DD52A6B8322008E082B /* ProfileScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenVC.swift; sourceTree = "<group>"; };
 		DD99C3172A5A54DE002B52B1 /* BannerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableCell.swift; sourceTree = "<group>"; };
 		DD99C3192A5A54F8002B52B1 /* CategoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableCell.swift; sourceTree = "<group>"; };
 		DD99C31B2A5A550E002B52B1 /* CategoryCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewManager.swift; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		DD924DD42A6B830C008E082B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DD924DD52A6B8322008E082B /* ProfileScreenVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		DDBE5F1F2A4DE61A006D8DC2 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 		DDBE5F202A4DE629006D8DC2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				DD924DD42A6B830C008E082B /* Profile */,
 				DD924DD22A6B80B6008E082B /* TabBar.swift */,
 				DDBE5F212A4DE633006D8DC2 /* Menu */,
 				DD8C1C0C2A4E99AE00BDEDB7 /* Detail */,
@@ -344,6 +355,7 @@
 				DD8637FC2A56663100E83073 /* MenuView.swift in Sources */,
 				DD8AC3352A57B6390074BB43 /* Reusable + reuseID.swift in Sources */,
 				DD99C31E2A5A7327002B52B1 /* BannerCollectionCell.swift in Sources */,
+				DD924DD62A6B8322008E082B /* ProfileScreenVC.swift in Sources */,
 				DD8C1C022A4E704D00BDEDB7 /* ProductTableCell.swift in Sources */,
 				DD8637F92A565C3900E83073 /* MenuTableViewManager.swift in Sources */,
 				DD8B67A22A4DD313005251F0 /* SceneDelegate.swift in Sources */,
