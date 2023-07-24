@@ -34,6 +34,7 @@
 		DD8F125D2A5F9CFB0074BC67 /* CustomBannerPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F125C2A5F9CFB0074BC67 /* CustomBannerPriceLabel.swift */; };
 		DD8F125F2A5FB4140074BC67 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F125E2A5FB4140074BC67 /* CategoryService.swift */; };
 		DD9094012A6E1676002B566D /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9094002A6E1676002B566D /* BasketView.swift */; };
+		DD9094042A6E21CD002B566D /* BasketTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9094032A6E21CD002B566D /* BasketTableViewManager.swift */; };
 		DD924DD32A6B80B6008E082B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD924DD22A6B80B6008E082B /* TabBar.swift */; };
 		DD924DD62A6B8322008E082B /* ProfileScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD924DD52A6B8322008E082B /* ProfileScreenVC.swift */; };
 		DD924DD92A6B83A0008E082B /* ContactsScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD924DD82A6B83A0008E082B /* ContactsScreenVC.swift */; };
@@ -75,6 +76,7 @@
 		DD8F125C2A5F9CFB0074BC67 /* CustomBannerPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBannerPriceLabel.swift; sourceTree = "<group>"; };
 		DD8F125E2A5FB4140074BC67 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		DD9094002A6E1676002B566D /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		DD9094032A6E21CD002B566D /* BasketTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewManager.swift; sourceTree = "<group>"; };
 		DD924DD22A6B80B6008E082B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		DD924DD52A6B8322008E082B /* ProfileScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenVC.swift; sourceTree = "<group>"; };
 		DD924DD82A6B83A0008E082B /* ContactsScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsScreenVC.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				DD9094002A6E1676002B566D /* BasketView.swift */,
+				DD9094032A6E21CD002B566D /* BasketTableViewManager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				DD8C1C0A2A4E85E200BDEDB7 /* ProductService.swift in Sources */,
 				DD898D082A59C6ED00BFDB0A /* BannerCollectionViewManager.swift in Sources */,
 				DD8AC3372A5839830074BB43 /* UICollectionView + dequeueCell.swift in Sources */,
+				DD9094042A6E21CD002B566D /* BasketTableViewManager.swift in Sources */,
 				DD8C1C072A4E834C00BDEDB7 /* Product.swift in Sources */,
 				DD99C31C2A5A550E002B52B1 /* CategoryCollectionViewManager.swift in Sources */,
 				DD8D56D42A66480200A2D2AC /* Category.swift in Sources */,
