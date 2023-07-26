@@ -38,7 +38,7 @@ final class ProductTableCell: UITableViewCell {
     
 }
 
-// MARK: - Public methods
+// MARK: - Public Methods
 
 extension ProductTableCell {
     func update(_ product: Product) {

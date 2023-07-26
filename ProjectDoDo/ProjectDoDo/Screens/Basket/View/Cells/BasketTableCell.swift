@@ -41,3 +41,15 @@ final class BasketTableCell: UITableViewCell {
     }
     
 }
+
+// MARK: - Public Methods
+
+// Should be refactored accordingly to "BasketProductType"
+extension BasketTableCell {
+    func update(_ product: Product) {
+        productLabel.text = product.name
+        productDetail.text = product.detail
+        productPrice.text = "\(product.price)"
+        productImage.image = UIImage(named: product.image)
+    }
+}
