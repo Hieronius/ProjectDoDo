@@ -53,3 +53,9 @@ extension BasketTableCell {
         productImage.image = UIImage(named: product.image)
     }
 }
+
+// MARK: - UI and Constraints
+
+extension BasketTableCell {
+    private func setup
+}
