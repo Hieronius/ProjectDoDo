@@ -35,7 +35,7 @@ final class MenuScreenVC: GenericViewController<MenuView> {
     private func getBanners() {
         rootView.tableView.banners = bannerService.fetchBanners()
     }
-    
+
     private func getCategories() {
         rootView.tableView.categories = categoryService.fetchCategories()
     }

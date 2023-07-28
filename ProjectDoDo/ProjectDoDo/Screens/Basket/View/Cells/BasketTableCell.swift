@@ -56,6 +56,6 @@ extension BasketTableCell {
 
 // MARK: - UI and Constraints
 
-extension BasketTableCell {
-    private func setup
-}
+//extension BasketTableCell {
+//    private func setup
+//}

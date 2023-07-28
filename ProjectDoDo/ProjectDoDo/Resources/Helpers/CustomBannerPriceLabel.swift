@@ -35,6 +35,4 @@ final class CustomBannerPriceLabel: UILabel {
         let height = size.height + contentInsets.top + contentInsets.bottom
         return CGSize(width: width, height: height)
     }
-    
-    
 }

@@ -13,7 +13,7 @@ struct Product {
     var price: Int
     var image: String
     var type: String
-    var counter: Int
+    var count: Int
 }
 
 

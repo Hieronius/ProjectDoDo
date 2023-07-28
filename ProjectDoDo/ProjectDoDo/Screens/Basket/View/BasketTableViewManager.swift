@@ -9,28 +9,28 @@ import UIKit
 import SnapKit
 
 final class BasketTableViewManager: UITableView {
-    
+
     // MARK: - Public Properties
-    
+
     var basket: [Any] = [] {
         didSet {
             self.reloadData()
         }
     }
-    
+
     // MARK: - Initialization
-    
+
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         setupTableViewManager()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-// MARK: - Private Methods
+ MARK: - Private Methods
 
 extension BasketTableViewManager {
     private func setupTableViewManager() {
@@ -44,23 +44,23 @@ extension BasketTableViewManager {
 // MARK: - UITableViewDelegate
 
 extension BasketTableViewManager: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return basket.count
     }
 }
 
-// MARK: UITableViewManagerDataSource
+ MARK: UITableViewManagerDataSource
 
 extension BasketTableViewManager: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+
         return 200
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = dequeueCell(indexPath) as BasketTableCell
         let product = basket[indexPath.row]
         cell.update(product)

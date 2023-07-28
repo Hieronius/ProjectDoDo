@@ -104,6 +104,9 @@ extension BannerCollectionCell {
         container.layer.shadowOpacity = 0.1
         container.layer.shadowColor = UIColor.black.cgColor
         // container.layer.shadowPath = UIBezierPath(rect: container.bounds).cgPath
+        
+        
+        
         // container.layer.shadowPath = self.customShadowPath(viewLayer: container.layer, shadowHeight: 5).cgPath
         
         
